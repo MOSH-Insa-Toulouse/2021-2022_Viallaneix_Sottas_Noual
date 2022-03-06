@@ -1,3 +1,8 @@
+
+//Programme de base : 
+//PROJET MOSH - CAPTEUR GRANULOMETRIQUE
+//
+
 int sense = 0;
 
 // Encodeur rotatoire
