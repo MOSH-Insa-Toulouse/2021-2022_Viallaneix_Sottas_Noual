@@ -27,7 +27,6 @@ Granulometric sensor - MOSH project 2022.
 #### Présentation du capteur granulométrique
 ##### Le capteur
 > Hello voici la description du capteur. 
-> Hello 2 merci beeaucoup.
 ##### propriété d'un système granulaire
 #### Acquisition des données
 ##### La carte Arduino
