@@ -32,6 +32,11 @@ Granulometric sensor - MOSH project 2022.
 ##### La carte Arduino
 ##### Le conditionneur
 ###### Schéma electrique
+###### Simulation sous LT-Spice
+> Simulation continue paramétrique (DC Sweep)
+> Simulation temporelle (Transient)
+> Simulation fréquentielle (AC Sweep)
+
 ###### Code du système
 ###### Tests KiCad & LT-Spice
 ###### Réalisation du PCB
