@@ -7,7 +7,7 @@ int sense = 0;
 
 // Encodeur rotatoire
 #define encoder0PinA 2
-#define encoder0PinB 4
+//#define encoder0PinB 3
 #define Switch 3
 volatile unsigned int encoder0Pos = 0;
 
@@ -60,11 +60,12 @@ void setup() {
   pinMode(encoder0PinA, INPUT);
   digitalWrite(encoder0PinA, HIGH);
   
-  pinMode(encoder0PinB, INPUT);
-  digitalWrite(encoder0PinB, HIGH);
+  //pinMode(encoder0PinB, INPUT);
+ // digitalWrite(encoder0PinB, HIGH);
 
   attachInterrupt(0,doEncoder,RISING);
   pinMode(Switch, INPUT_PULLUP);
+  //pinMode(Switch, INPUT);
   attachInterrupt(1,doSwitch,FALLING);
 }
 
@@ -73,6 +74,7 @@ void setup() {
 
 void loop() {
   clic=1;
+  //doSwitch(); ligne liée au debug de l'encodeur rot sur pin 4 - non accessible interrupt
   encoder0Pos = 0;
   setPotWiper(pot0, potar);
   delay(50);
@@ -82,6 +84,7 @@ void loop() {
   Serial.print("\t");
   Serial.print(output);
   Serial.println(" V");
+ 
   
   if(output<0.8)
   {
@@ -182,11 +185,12 @@ void setPotWiper(int addr, int pos)
 
 void doSwitch()
 {
-  clic = 0;
+    clic = 0;
 }
 
 
 void doEncoder()
 {
   encoder0Pos=1;
+  Serial.println("fonction doEncoder call");
 }
