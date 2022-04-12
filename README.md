@@ -41,6 +41,6 @@ Granulometric sensor - MOSH project 2022.
 ###### Tests KiCad & LT-Spice
 ###### Réalisation du PCB
 ###### Banc de tests
-![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg)
+![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
 
 
