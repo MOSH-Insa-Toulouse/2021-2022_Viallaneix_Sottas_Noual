@@ -35,6 +35,7 @@ Granulometric sensor - MOSH project 2022.
 > Voici un premier exemple de schéma électrique
 > 
 ![Schéma électrique test](Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg)
+**Figure 1: Circuit amplificateur transimpédance**
 
 ###### Simulation sous LT-Spice
 > Simulation continue paramétrique (DC Sweep).
