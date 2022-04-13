@@ -31,7 +31,8 @@ Granulometric sensor - MOSH project 2022.
 ### Acquisition des données
 #### La carte Arduino
 #### Le conditionneur
-##### Partie 1: Mesure d'un très faible courant avec l'aide d'un micro-contrôleur
+
+#### Partie 1: Mesure d'un très faible courant avec l'aide d'un micro-contrôleur
 L’objectif étant d’extraire l’information utile du capteur ayant un très faible courant (environ 100 nA), le montage électrique doit être adapté de manière à mesurer des courants faibles. Selon les caractéristiques techniques du microcontrôleur Arduino (cf Datasheet), on ne peut pas mesurer directement de très faibles courants en raison de l’impédance de source (environ égale à quelques kOhms). Il est donc nécessaire d’utiliser un circuit amplificateur transimpédance composé d’un amplificateur opérationnel AOP pour convertir un courant issu du capteur en une tension mesurable par le CAN (Convertisseur Analogique-Numérique) de l’Arduino UNO.
 
 <p align="center"><img src="Images/solution classique transimpédance.png" align=middle width="456.690135pt" height="300.925785pt"/></p>
@@ -69,8 +70,14 @@ Le Gain de ce montage et la Tension de sortie ADC sont décrits dans les calculs
 Si on a un courant nul en entrée, on veut alors obtenir une tension ADC nulle en sortie, cela implique qu’il n’y ait pas de dérives en tension de la part de l’AOP.
 Les principales contraintes pour le choix de l’amplificateur opérationnel sont le faible courant d’entrée et un très faible offset de tension devant être négligeable devant 10mV (tension aux bornes de R1).
 
+### Partie 2: Mise en oeuvre du filtrage du signal
 
 
+
+##### Simulation sous LT-Spice
+> Simulation continue paramétrique (DC Sweep).
+> Simulation temporelle (Transient).
+> Simulation fréquentielle (AC Sweep).
 
 ##### Schéma électrique
 > Voici un premier exemple de schéma électrique
@@ -79,12 +86,7 @@ Les principales contraintes pour le choix de l’amplificateur opérationnel son
 
 **Figure 1: Circuit amplificateur transimpédance**
 
-##### Simulation sous LT-Spice
-> Simulation continue paramétrique (DC Sweep).
-> Simulation temporelle (Transient).
-> Simulation fréquentielle (AC Sweep).
-
-### Code du système
+### Code Arduino du système
 ###### Tests KiCad & LT-Spice
 ### Réalisation du PCB
 ### Banc de tests
