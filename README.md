@@ -32,6 +32,10 @@ Granulometric sensor - MOSH project 2022.
 ##### La carte Arduino
 ##### Le conditionneur
 ###### Schéma electrique
+> Voici un premier exemple de schéma électrique
+> 
+![Schéma électrique test](Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg)
+
 ###### Simulation sous LT-Spice
 > Simulation continue paramétrique (DC Sweep).
 > Simulation temporelle (Transient).
