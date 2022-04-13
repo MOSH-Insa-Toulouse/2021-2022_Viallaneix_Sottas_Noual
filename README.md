@@ -32,11 +32,30 @@ Granulometric sensor - MOSH project 2022.
 #### La carte Arduino
 #### Le conditionneur
 ##### Partie 1: Mesure d'un très faible courant avec l'aide d'un micro-contrôleur
+L’objectif étant d’extraire l’information utile du capteur ayant un très faible courant (environ 100 nA), le montage électrique doit être adapté de manière à mesurer des courants faibles. Selon les caractéristiques techniques du microcontrôleur Arduino (cf Datasheet), on ne peut pas mesurer directement de très faibles courants en raison de l’impédance de source (environ égale à quelques kOhms). Il est donc nécessaire d’utiliser un circuit amplificateur transimpédance composé d’un amplificateur opérationnel AOP pour convertir un courant issu du capteur en une tension mesurable par le CAN (Convertisseur Analogique-Numérique) de l’Arduino UNO.
+
+
+L’inconvénient d’un montage classique de transimpédance est qu’il nécessite une grande résistance pour amplifier le signal et que la tension d’alimentation du capteur doit être négative. On peut donc ajouter un autre étage inverseur à la suite du premier montage : 
+
+
+Dans le montage ci-dessus, le gain du second étage étant négatif compte-tenu de son caractère inverseur, la résistance R1 du premier étage n’a plus besoin d’avoir une grande valeur. De plus, l’alimentation du capteur est donc positive grâce au second montage inverseur du fait des produits des gains de deux étages. 
+
+Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le montage. 
+
+En calculant la tension aux bornes de la résistance R1, on obtient une tension environ égale à 10 mV.
+
+
+Il s’agit d’une valeur importante pour le choix de l’AOP notamment pour l'effet de l’offset du signal d’entrée. 
+Le Gain de ce montage et la Tension de sortie ADC sont décrits dans les calculs ci-dessous : 
+
+
+Si on a un courant nul en entrée, on veut alors obtenir une tension ADC nulle en sortie, cela implique qu’il n’y ait pas de dérives en tension de la part de l’AOP.
+Les principales contraintes pour le choix de l’amplificateur opérationnel sont le faible courant d’entrée et un très faible offset de tension devant être négligeable devant 10mV (tension aux bornes de R1).
 
 
 ##### Schéma électrique
 > Voici un premier exemple de schéma électrique
-<p align="center"><img src="Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg" align=middle width="480.690135pt" height="280.925785pt"/></p>
+<p align="center"><img src="Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg" align=middle width="552.690135pt" height="250.925785pt"/></p>
 
 ![Schéma électrique 1](Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg)
 
