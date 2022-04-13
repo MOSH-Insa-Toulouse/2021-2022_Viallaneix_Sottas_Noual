@@ -41,28 +41,39 @@ L’objectif étant d’extraire l’information utile du capteur ayant un très
 L’inconvénient d’un montage classique de transimpédance est qu’il nécessite une grande résistance pour amplifier le signal et que la tension d’alimentation du capteur doit être négative. On peut donc ajouter un autre étage inverseur à la suite du premier montage : 
 
 <p align="center"><img src="Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg" align=middle width="556.690135pt" height="250.925785pt"/></p>
-<p align="center"><img src="Images/Formule 2.png" align=middle width="556.690135pt" height="250.925785pt"/></p>
+<p align="center"><img src="Images/Formule 2.png" align=middle width="194pt" height="48pt"/></p>
 
 **Figures 2 et 3: Ajout d'un étage inverseur sur le montage de transimpédance et Calcul du gain du second montage**
 
 Dans le montage ci-dessus, le gain du second étage étant négatif compte-tenu de son caractère inverseur `(cf Figure 3)`, la résistance R1 du premier étage n’a plus besoin d’avoir une grande valeur. De plus, l’alimentation du capteur est donc positive grâce au second montage inverseur du fait des produits des gains de deux étages. 
 
-Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le montage. 
+Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le montage.
+<p align="center"><img src="Images/Solution minimale.png" align=middle width="367.690135pt" height="242.925785pt"/></p>
 
-En calculant la tension aux bornes de la résistance R1, on obtient une tension environ égale à 10 mV.
+**Figure 4: Solution simplifiée pour le montage transimpédance**
 
+<p align="center"><img src="Images/Formule 3.png" align=middle width="494.690135pt" height="23.925785pt"/></p>
+
+**Figure 5 : Calcul de la tension aux bornes de R1**
+
+En calculant la tension aux bornes de la résistance R1, on obtient une tension environ égale à 10 mV d'après la `Figure 4`.
 
 Il s’agit d’une valeur importante pour le choix de l’AOP notamment pour l'effet de l’offset du signal d’entrée. 
 Le Gain de ce montage et la Tension de sortie ADC sont décrits dans les calculs ci-dessous : 
 
+<p align="center"><img src="Images/Formule 4.png" align=middle width="361.690135pt" height="52.925785pt"/></p>
+<p align="center"><img src="Images/Formule 5.png" align=middle width="428.690135pt" height="23.925785pt"/></p>
+
+**Figure 6 : Calculs du gain du montage et de la tension de sortie**
 
 Si on a un courant nul en entrée, on veut alors obtenir une tension ADC nulle en sortie, cela implique qu’il n’y ait pas de dérives en tension de la part de l’AOP.
 Les principales contraintes pour le choix de l’amplificateur opérationnel sont le faible courant d’entrée et un très faible offset de tension devant être négligeable devant 10mV (tension aux bornes de R1).
 
 
+
+
 ##### Schéma électrique
 > Voici un premier exemple de schéma électrique
-<p align="center"><img src="Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg" align=middle width="552.690135pt" height="250.925785pt"/></p>
 
 ![Schéma électrique 1](Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg)
 
