@@ -36,8 +36,9 @@ Granulometric sensor - MOSH project 2022.
 
 ##### Schéma électrique
 > Voici un premier exemple de schéma électrique
+<p align="center"><img src="Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg" align=middle width="480.690135pt" height="280.925785pt"/></p>
 
-![Schéma électrique test](Images/Circuit Transimpédance 2 étages.jpg)
+![Schéma électrique 1](Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg)
 
 **Figure 1: Circuit amplificateur transimpédance**
 
@@ -51,5 +52,5 @@ Granulometric sensor - MOSH project 2022.
 ### Réalisation du PCB
 ### Banc de tests
 ![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
-
+**Figure 10: Dessin 2D du banc de test**
 
