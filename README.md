@@ -53,6 +53,7 @@ L’inconvénient d’un montage classique de transimpédance est qu’il néces
 **Figures 2 et 3: Ajout d'un étage inverseur sur le montage de transimpédance et Calcul du gain du second montage**
 
 <div align="left">
+
 Dans le montage ci-dessus, le gain du second étage étant négatif compte-tenu de son caractère inverseur (`cf Figure 3`), la résistance R1 du premier étage n’a plus besoin d’avoir une grande valeur. De plus, l’alimentation du capteur est donc positive grâce au second montage inverseur du fait des produits des gains de deux étages. 
 
 Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le montage.
@@ -67,6 +68,7 @@ Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le 
 **Figure 5 : Calcul de la tension aux bornes de R1**
 
 <div align="left">
+  
 En calculant la tension aux bornes de la résistance R1, on obtient une tension environ égale à 10 mV d'après la `Figure 4`.
 
 Il s’agit d’une valeur importante pour le choix de l’AOP notamment pour l'effet de l’offset du signal d’entrée. 
@@ -80,6 +82,7 @@ Le Gain de ce montage et la Tension de sortie ADC sont décrits dans les calculs
 **Figure 6 : Calculs du gain du montage et de la tension de sortie**
 
 <div align="left">
+  
 Si on a un courant nul en entrée, on veut alors obtenir une tension ADC nulle en sortie, cela implique qu’il n’y ait pas de dérives en tension de la part de l’AOP.
 Les principales contraintes pour le choix de l’amplificateur opérationnel sont le faible courant d’entrée et un très faible offset de tension devant être négligeable devant 10mV (tension aux bornes de R1).
 
@@ -96,6 +99,7 @@ De plus, on peut remarquer que cet AOP possède un mode commun incluant la masse
 **Figure 7 : Extrait de la datasheet dans la partie Electrical Characteristics**
 
 <div align="left">
+  
 Enfin, on constate que le courant de polarisation en entrée (Input Bias Current) est au maximum égale à 30pA, cela convient car nous effectuons des mesures de courant autour de 100nA.
 En respectant les différentes conditions énoncées précédemment, l'AOP 1050C est adapté pour notre circuit électronique.
 
@@ -116,6 +120,7 @@ En intégrant les différents filtres, le montage ressemble à ceci :
 **Figure 8 : Schéma du montage électrique avec les différents**
 
 <div align="left">
+
 On distingue 3 différents filtres où nous avons cherché pour chacun la fréquence de coupure et son rôle principal pour le filtrage : 
 
 > Photo
@@ -125,6 +130,7 @@ On distingue 3 différents filtres où nous avons cherché pour chacun la fréqu
 **Figure 9 : Identification des différents filtres dans le montage**
 
 <div align="left">  
+ 
 Tout d'abord, le filtre passe-bas passif, placé à l'entrée de l'AOP, est constitué de R1(100kΩ) et C1(100nF). Il possède une fréquence de coupure théorique environ égale à 16Hz `cf Figure 7` . Il permet donc de filtrer les perturbations et les excès de bruit en courant sur la forme du signal d'entrée. 
 
 <p align="center"><img src="Images/Formule 6.png" align=middle width="533.090135pt" height="48.025785pt"/></p>
@@ -132,7 +138,8 @@ Tout d'abord, le filtre passe-bas passif, placé à l'entrée de l'AOP, est cons
 
 **Figure 10: Calcul de la fréquence de coupure du filtre passif (R1 et C1)**
 
-<div align="left"> 
+<div align="left">
+
 Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP, est constitué de R3(100kΩ) et C4(1μF) en parallèle. Ce dernier possède une fréquence de coupure théorique environ égale à 1.6Hz `cf Figure 8`. Son rôle principal est de supprimer la composante parasite de 50Hz (du fait du couplage capacitif avec la tension 230V) qui perturbe significativement le signal `cf Figure XX`.
 
 <p align="center"><img src="Images/Formule 7.png" align=middle width="453.090135pt" height="48.025785pt"/></p>
@@ -141,6 +148,7 @@ Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP
 **Figure 11: Calcul de la fréquence de coupure du filtre actif (R3 et C4)**
 
 <div align="left">
+
 Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué de R6(100kΩ) et C2(100nF). Il possède une fréquence de coupure théorique environ égale à 1.6kHz `cf Figure 9` . En sachant que la fréquence d'échantillonnage du micro-contrôleur est environ égale à 15,4kHz, il faut respecter la condition d'échantillonnage de Shannon à savoir:  
 
 <p align="center"><img src="Images/Formule 8.png" align=middle width="524.090135pt" height="48.025785pt"/></p>
@@ -149,10 +157,28 @@ Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué 
 **Figure 12: Calcul de la fréquence de coupure du filtre passif (R6 et C2) et Vérification de la condition d'échantillonnage de Shannon**
 
 <div align="left">
-Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon, le filtre permet de limiter les effets de repliement de spectre (rôle d'anti-aliasing) et de manière générale, le bruit lors du traitement du signal. 
+
+Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon `cf Figure 12`, le filtre permet de limiter les effets de repliement de spectre (rôle d'anti-aliasing) et de manière générale, le bruit lors du traitement du signal. 
 
 ##### Schéma du circuit électronique final
-> Voici un premier exemple de schéma électrique
+> Voici un première proposition du schéma électrique
+  
+<div align="center"> 
+
+**Figure 13: Premier schéma du montage électronique**
+
+<div align="left">
+  
+Dans ce schéma, nous simulons le bruit en courant à l'entrée en mettant une capacité à côté du générateur de courant.
+  
+  
+> On propose une optimisation du montage électronique en simulant le capteur de graphite `cf Figure 
+  
+<div align="center"> 
+
+**Figure 14: Calcul de la fréquence de coupure du filtre passif (R6 et C2) et Vérification de la condition d'échantillonnage de Shannon**
+
+<div align="left">
 
 
 **Figure Test: Circuit amplificateur transimpédance**
