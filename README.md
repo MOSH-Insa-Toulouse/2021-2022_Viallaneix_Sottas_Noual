@@ -101,7 +101,7 @@ Tout d'abord, le filtre passe-bas passif, placé à l'entrée de l'AOP, est cons
 
 > Photo Calcul
 
-Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP, est constitué de R3(100kΩ) et C4(1μF) en parallèle. Ce dernier possède une fréquence de coupure théorique environ égale à 1.6Hz `cf Figure 8`. Son rôle est principalement de supprimer la composante parasite de 50Hz (du fait du couplage capacitif avec la tension 230V) qui perturbe significativement le signal `cf Figure XX`.
+Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP, est constitué de R3(100kΩ) et C4(1μF) en parallèle. Ce dernier possède une fréquence de coupure théorique environ égale à 1.6Hz `cf Figure 8`. Son rôle principal est de supprimer la composante parasite de 50Hz (du fait du couplage capacitif avec la tension 230V) qui perturbe significativement le signal `cf Figure XX`.
 
 > Photo Calcul
 
@@ -109,10 +109,12 @@ Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué 
 
 > Photo Calculs
 
-Son rôle est principalement de supprimer la composante parasite de 50Hz (du fait du couplage capacitif avec la tension 230V) qui perturbe significativement le signal `cf Figure XX`.
+Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon, le filtre permet de limiter les effets de repliement de spectre (rôle d'anti-aliasing) et de manière générale, le bruit lors du traitement du signal. 
 
 ##### Schéma du circuit électronique final
 > Voici un premier exemple de schéma électrique
+
+
 
 
 **Figure Test: Circuit amplificateur transimpédance**
