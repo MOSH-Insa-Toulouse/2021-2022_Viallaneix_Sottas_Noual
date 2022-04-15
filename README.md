@@ -158,7 +158,7 @@ Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué 
 
 <div align="left">
 
-Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon `cf Figure 12`, le filtre permet de limiter les effets de repliement de spectre (rôle d'anti-aliasing) et de manière générale, le bruit lors du traitement du signal. 
+Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon `cf Figure ci-dessus`, le filtre permet de limiter les effets de repliement de spectre (rôle d'anti-aliasing) et de manière générale, le bruit lors du traitement du signal. 
 
 ##### Schéma du circuit électronique final
 > Voici un première proposition du schéma électrique
@@ -176,7 +176,7 @@ Dans ce schéma, nous simulons le bruit en courant à l'entrée en mettant une c
   
 <div align="center"> 
 
-**Figure 14: Calcul de la fréquence de coupure du filtre passif (R6 et C2) et Vérification de la condition d'échantillonnage de Shannon**
+**Figure 14: Schéma électrique optimisé**
 
 <div align="left">
 
