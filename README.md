@@ -46,7 +46,7 @@ L’inconvénient d’un montage classique de transimpédance est qu’il néces
 
 
 <p align="center"><img src="Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg" align=middle width="556.690135pt" height="250.925785pt"/></p>
-<p align="center"><img src="Images/Formule 2.png" align=middle width="194.090135pt" height="48.925785pt"/></p>
+<p align="center"><img src="Images/Calculs/Formule 2.png" align=middle width="194.090135pt" height="48.925785pt"/></p>
 
 <div align="center"> 
   
@@ -63,7 +63,7 @@ Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le 
 
 **Figure 4: Solution simplifiée pour le montage transimpédance**
 
-<p align="center"><img src="Images/Formule 3.png" align=middle width="494.690135pt" height="23.925785pt"/></p>
+<p align="center"><img src="Images/Calculs/Formule 3.png" align=middle width="494.690135pt" height="23.925785pt"/></p>
 
 **Figure 5 : Calcul de la tension aux bornes de R1**
 
@@ -74,9 +74,9 @@ En calculant la tension aux bornes de la résistance R1, on obtient une tension 
 Il s’agit d’une valeur importante pour le choix de l’AOP notamment pour l'effet de l’offset du signal d’entrée. 
 Le Gain de ce montage et la Tension de sortie ADC sont décrits dans les calculs ci-dessous : 
 
-<p align="center"><img src="Images/Formule 4.png" align=middle width="361.690135pt" height="52.925785pt"/></p>
+<p align="center"><img src="Images/Calculs/Formule 4.png" align=middle width="361.690135pt" height="52.925785pt"/></p>
 
-<p align="center"><img src="Images/Formule 5.png" align=middle width="428.690135pt" height="23.925785pt"/></p>
+<p align="center"><img src="Images/Calculs/Formule 5.png" align=middle width="428.690135pt" height="23.925785pt"/></p>
 <div align="center"> 
   
 **Figure 6 : Calculs du gain du montage et de la tension de sortie**
@@ -133,7 +133,7 @@ On distingue 3 différents filtres où nous avons cherché pour chacun la fréqu
  
 Tout d'abord, le filtre passe-bas passif, placé à l'entrée de l'AOP, est constitué de R1(100kΩ) et C1(100nF). Il possède une fréquence de coupure théorique environ égale à 16Hz `cf Figure 7` . Il permet donc de filtrer les perturbations et les excès de bruit en courant sur la forme du signal d'entrée. 
 
-<p align="center"><img src="Images/Formule 6.png" align=middle width="533.090135pt" height="48.025785pt"/></p>
+<p align="center"><img src="Images/Calculs/Formule 6.png" align=middle width="533.090135pt" height="48.025785pt"/></p>
 <div align="center"> 
 
 **Figure 10: Calcul de la fréquence de coupure du filtre passif (R1 et C1)**
@@ -142,7 +142,7 @@ Tout d'abord, le filtre passe-bas passif, placé à l'entrée de l'AOP, est cons
 
 Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP, est constitué de R3(100kΩ) et C4(1μF) en parallèle. Ce dernier possède une fréquence de coupure théorique environ égale à 1.6Hz `cf Figure 8`. Son rôle principal est de supprimer la composante parasite de 50Hz (du fait du couplage capacitif avec la tension 230V) qui perturbe significativement le signal `cf Figure XX`.
 
-<p align="center"><img src="Images/Formule 7.png" align=middle width="453.090135pt" height="48.025785pt"/></p>
+<p align="center"><img src="Images/Calculs/Formule 7.png" align=middle width="453.090135pt" height="48.025785pt"/></p>
 <div align="center"> 
 
 **Figure 11: Calcul de la fréquence de coupure du filtre actif (R3 et C4)**
@@ -151,7 +151,7 @@ Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP
 
 Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué de R6(100kΩ) et C2(100nF). Il possède une fréquence de coupure théorique environ égale à 1.6kHz `cf Figure 9` . En sachant que la fréquence d'échantillonnage du micro-contrôleur est environ égale à 15,4kHz, il faut respecter la condition d'échantillonnage de Shannon à savoir:  
 
-<p align="center"><img src="Images/Formule 8.png" align=middle width="524.090135pt" height="48.025785pt"/></p>
+<p align="center"><img src="Images/Calculs/Formule 8.png" align=middle width="524.090135pt" height="48.025785pt"/></p>
 <div align="center"> 
 
 **Figure 12: Calcul de la fréquence de coupure du filtre passif (R6 et C2) et Vérification de la condition d'échantillonnage de Shannon**
@@ -196,6 +196,11 @@ Vérification graphique de la fréquence de coupure de chaque filtre
 ###### Tests KiCad & LT-Spice
 ### Réalisation du PCB
 ### Banc de tests
-![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
-**Figure 10: Dessin 2D du banc de test**
 
+<div align="center"> 
+
+![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
+
+**Figure 14: Dessin 2D du banc de test**
+
+<div align="left">
