@@ -53,7 +53,7 @@ L’inconvénient d’un montage classique de transimpédance est qu’il néces
 **Figures 2 et 3: Ajout d'un étage inverseur sur le montage de transimpédance et Calcul du gain du second montage**
 
 <div align="left">
-Dans le montage ci-dessus, le gain du second étage étant négatif compte-tenu de son caractère inverseur `cf Figure 3` , la résistance R1 du premier étage n’a plus besoin d’avoir une grande valeur. De plus, l’alimentation du capteur est donc positive grâce au second montage inverseur du fait des produits des gains de deux étages. 
+Dans le montage ci-dessus, le gain du second étage étant négatif compte-tenu de son caractère inverseur (`cf Figure 3`), la résistance R1 du premier étage n’a plus besoin d’avoir une grande valeur. De plus, l’alimentation du capteur est donc positive grâce au second montage inverseur du fait des produits des gains de deux étages. 
 
 Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le montage.
 <p align="center"><img src="Images/Solution minimale.png" align=middle width="367.690135pt" height="242.925785pt"/></p>
