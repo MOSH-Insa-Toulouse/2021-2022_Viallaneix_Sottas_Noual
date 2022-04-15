@@ -1,5 +1,5 @@
-# 2021-2022_Viallaneix_Sottas_Noual
-Granulometric sensor - MOSH project 2022.
+# 2021-2022_Viallaneix_Sottas_Noual MOSH Project 2022
+Granulometric sensor
 
 # Informations générales
 > Ce projet s'inscrit dans le cadre de l'UF _"Du capteur au banc de test en open source hardware"_.
