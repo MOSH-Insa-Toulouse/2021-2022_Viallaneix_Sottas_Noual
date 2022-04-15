@@ -20,10 +20,14 @@ Granulometric sensor - MOSH project 2022.
 
 
 # Les étapes
-> Dans la suite du projet le capteur désignera le corps d'épreuve et le banc le système permettant l'acquisition des 
+> Dans la suite du projet le capteur désignera le corps d'épreuve et le banc de test permettant l'acquisition des données.
 > La première étape consiste à la réalisation du capteur granulométrique. Ce capteur est utilisé pour le développement du banc d'étalonnage
 
+***
 ## Les axes du projets
+> Sommaire à placer
+***
+
 ### Présentation du capteur granulométrique
 ### Le capteur
 > Hello voici la description du capteur. 
@@ -113,11 +117,10 @@ Ensuite, on applique un filtre actif au niveau de l’amplificateur opérationne
 
 En intégrant les différents filtres, le montage ressemble à ceci : 
 
-> Photo
-
-<div align="center"> 
+<div align="center">
+<p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique 1.png" align=middle width="952.090135pt" height="446.025785pt"/></p>
   
-**Figure 8 : Schéma du montage électrique avec les différents**
+**Figure 8 : Schéma du montage électrique avec les différents filtres**
 
 <div align="left">
 
@@ -149,7 +152,7 @@ Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP
 
 <div align="left">
 
-Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué de R6(100kΩ) et C2(100nF). Il possède une fréquence de coupure théorique environ égale à 1.6kHz `cf Figure 9` . En sachant que la fréquence d'échantillonnage du micro-contrôleur est environ égale à 15,4kHz, il faut respecter la condition d'échantillonnage de Shannon à savoir:  
+Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué de R6(100kΩ) et C2(100nF). Il possède une fréquence de coupure théorique environ égale à 1.6kHz `cf Figure 9`. En sachant que la fréquence d'échantillonnage du micro-contrôleur est environ égale à 15,4kHz, il faut respecter la condition d'échantillonnage de Shannon à savoir:  
 
 <p align="center"><img src="Images/Calculs/Formule 8.png" align=middle width="524.090135pt" height="48.025785pt"/></p>
 <div align="center"> 
@@ -163,7 +166,8 @@ Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon `
 ##### Schéma du circuit électronique final
 > Voici un première proposition du schéma électrique
   
-<div align="center"> 
+<div align="center">
+<p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique 1.png" align=middle width="952.090135pt" height="446.025785pt"/></p>
 
 **Figure 13: Premier schéma du montage électronique**
 
@@ -172,19 +176,18 @@ Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon `
 Dans ce schéma, nous simulons le bruit en courant à l'entrée en mettant une capacité à côté du générateur de courant.
   
   
-> On propose une optimisation du montage électronique en simulant le capteur de graphite `cf Figure 
+> On propose une optimisation du montage électronique en simulant le capteur de graphite `cf Figure ci-dessous`
   
-<div align="center"> 
+<div align="center">
+<p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique optimisé.png" align=middle width="1037 pt" height="527.025785pt"/></p>
 
 **Figure 14: Schéma électrique optimisé**
 
 <div align="left">
 
 
-**Figure Test: Circuit amplificateur transimpédance**
 
-
-##### Simulation sous LT-Spice
+##### Simulations sous LT-Spice
 Vérification graphique de la fréquence de coupure de chaque filtre
 > Simulation continue paramétrique (DC Sweep).
 > Simulation temporelle (Transient).
@@ -196,6 +199,7 @@ Vérification graphique de la fréquence de coupure de chaque filtre
 ###### Tests KiCad & LT-Spice
 ### Réalisation du PCB
 ### Banc de tests
+> En Cours de réalisation 
 
 <div align="center"> 
 
