@@ -46,7 +46,7 @@ L’inconvénient d’un montage classique de transimpédance est qu’il néces
 
 **Figures 2 et 3: Ajout d'un étage inverseur sur le montage de transimpédance et Calcul du gain du second montage**
 
-Dans le montage ci-dessus, le gain du second étage étant négatif compte-tenu de son caractère inverseur `(cf Figure 3)`, la résistance R1 du premier étage n’a plus besoin d’avoir une grande valeur. De plus, l’alimentation du capteur est donc positive grâce au second montage inverseur du fait des produits des gains de deux étages. 
+Dans le montage ci-dessus, le gain du second étage étant négatif compte-tenu de son caractère inverseur `cf Figure 3`, la résistance R1 du premier étage n’a plus besoin d’avoir une grande valeur. De plus, l’alimentation du capteur est donc positive grâce au second montage inverseur du fait des produits des gains de deux étages. 
 
 Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le montage.
 <p align="center"><img src="Images/Solution minimale.png" align=middle width="367.690135pt" height="242.925785pt"/></p>
@@ -70,23 +70,65 @@ Le Gain de ce montage et la Tension de sortie ADC sont décrits dans les calculs
 Si on a un courant nul en entrée, on veut alors obtenir une tension ADC nulle en sortie, cela implique qu’il n’y ait pas de dérives en tension de la part de l’AOP.
 Les principales contraintes pour le choix de l’amplificateur opérationnel sont le faible courant d’entrée et un très faible offset de tension devant être négligeable devant 10mV (tension aux bornes de R1).
 
-### Partie 2: Mise en oeuvre du filtrage du signal
+##### Vérification avec la Datasheet de l'AOP
 
+> Mettre la datasheet
+
+Selon les données de la [Datasheet] (préciser le lien avec la datasheet) de l'AOP 1050C, on constate qu'il possède un faible offset de tension d'environ 5μV au maximum et un très faible drift pour l'offset de tension à environ 0.05μV/°C. Cela indique la bonne stabilité de l'amplificateur opérationnel. Par comparaison, les AOP utilisés traditionnellement en salle de TP possèdent un offset autour de 5mV, une valeur 1000 fois plus grande que celle du 1050C.
+En comparant la tension d'entrée (autour de 10mV `cf Figure 5`), on constate que l'offset de 5μV est très faible. 
+De plus, on peut remarquer que cet AOP possède un mode commun incluant la masse ce qui correspond à notre montage électrique. 
+
+> Photo
+
+Enfin, on constate que le courant de polarisation en entrée (Input Bias Current) est au maximum égale à 30pA, cela convient car nous effectuons des mesures de courant autour de 100nA.
+En respectant les différentes conditions énoncées précédemment, l'AOP 1050C est adapté pour notre circuit électronique.
+
+
+#### Partie 2: Mise en oeuvre du filtrage du signal
+
+Étant donné que ce montage est très sensible aux signaux parasites (50Hz, horloge du microcontrôleur Arduino, Bluetooth entre autres), on doit mettre en œuvre un filtrage passe-bas pour limiter les perturbations du signal.
+D’une part, il faut appliquer un filtre passif en entrée pour limiter les perturbations de type radiofréquences pouvant conduire à un excès de bruit dans l’ADC.
+Ensuite, on applique un filtre actif au niveau de l’amplificateur opérationnel pour augmenter l’efficacité de l’échantillonnage du signal. 
+À la sortie de l’AOP, on utilise un dernier filtre passif pour retirer le bruit sur le traitement du signal et les phénomènes de repliement de spectre (aliasing). 
+
+En intégrant les différents filtres, le montage ressemble à ceci : 
+
+> Photo
+
+On distingue 3 différents filtres où nous avons cherché pour chacun la fréquence de coupure et son rôle principal pour le filtrage : 
+
+> Photo
+
+Tout d'abord, le filtre passe-bas passif, placé à l'entrée de l'AOP, est constitué de R1(100kΩ) et C1(100nF). Il possède une fréquence de coupure théorique environ égale à 16Hz `cf Figure 7`. Il permet donc de filtrer les perturbations et les excès de bruit en courant sur la forme du signal d'entrée. 
+
+> Photo Calcul
+
+Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP, est constitué de R3(100kΩ) et C4(1μF) en parallèle. Ce dernier possède une fréquence de coupure théorique environ égale à 1.6Hz `cf Figure 8`. Son rôle est principalement de supprimer la composante parasite de 50Hz (du fait du couplage capacitif avec la tension 230V) qui perturbe significativement le signal `cf Figure XX`.
+
+> Photo Calcul
+
+Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué de R6(100kΩ) et C2(100nF). Il possède une fréquence de coupure théorique environ égale à 1.6kHz `cf Figure 9`. En sachant que la fréquence d'échantillonnage du micro-contrôleur est environ égale à 15,4kHz, il faut respecter la condition d'échantillonnage de Shannon à savoir:  
+
+> Photo Calculs
+
+Son rôle est principalement de supprimer la composante parasite de 50Hz (du fait du couplage capacitif avec la tension 230V) qui perturbe significativement le signal `cf Figure XX`.
+
+##### Schéma du circuit électronique final
+> Voici un premier exemple de schéma électrique
+
+
+**Figure Test: Circuit amplificateur transimpédance**
 
 
 ##### Simulation sous LT-Spice
+Vérification graphique de la fréquence de coupure de chaque filtre
 > Simulation continue paramétrique (DC Sweep).
 > Simulation temporelle (Transient).
 > Simulation fréquentielle (AC Sweep).
 
-##### Schéma électrique
-> Voici un premier exemple de schéma électrique
-
-![Schéma électrique 1](Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg)
-
-**Figure 1: Circuit amplificateur transimpédance**
-
 ### Code Arduino du système
+
+> En Cours
 ###### Tests KiCad & LT-Spice
 ### Réalisation du PCB
 ### Banc de tests
