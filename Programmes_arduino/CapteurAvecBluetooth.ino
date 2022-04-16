@@ -130,7 +130,6 @@ void loop() {
   Serial.print("\t\t\tRsensor : ");
   Serial.print(Rsensor);
   Serial.println(" MOhms");
-  //problème avec la valeur de Rsensor, mauvaise formule probablement
 
   
   ////////////////////  MENU ET NAVIGATION
@@ -142,7 +141,7 @@ void loop() {
   if (menu==PRINCIPAL)
   {
     
-    if(encoder0Pos==1)  // le faire sous forme de tableaux 
+    if(encoder0Pos==1)
     {
     if (ligne<2){ligne+=1;}
     else {ligne=0;}
@@ -197,7 +196,7 @@ void loop() {
 
   else if (menu==SERIALSENSE)
   {
-    if(encoder0Pos==1)  // le faire sous forme de tableaux 
+    if(encoder0Pos==1)
     {
       Nb+=1;
     }
