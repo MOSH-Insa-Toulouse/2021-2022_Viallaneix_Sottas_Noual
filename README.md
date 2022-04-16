@@ -126,9 +126,8 @@ En intégrant les différents filtres, le montage ressemble à ceci :
 
 On distingue 3 différents filtres où nous avons cherché pour chacun la fréquence de coupure et son rôle principal pour le filtrage : 
 
-> Photo
-
-<div align="center"> 
+<div align="center">
+<p align="center"><img src="Images/Simulation_LTSpice/Distinction des filtres.png" align=middle width="742.090135pt" height="483.025785pt"/></p>
   
 **Figure 9 : Identification des différents filtres dans le montage**
 
@@ -183,18 +182,22 @@ Dans ce schéma, nous simulons le bruit en courant à l'entrée en mettant une c
 **Figure 14: Schéma électrique optimisé**
 
 <div align="left">
-
-
+  
+> Commentaires à donner rapidement 
+  
 
 #### Simulations sous LT-Spice
   
-On vérifie les conditions optimales de fonctionnement du montage électronique `cf figures ci-dessous`.
-> Mettre une image supplémentaire. 
+On vérifie les conditions optimales de fonctionnement du montage électronique en effectuant différentes simulations sur le logiciel LTSPice `cf figures ci-dessous`.
 
 <div align="center">
 <img src="Images/Simulation_LTSpice/Simulation 1 illustration du gain montage.png"/></p>
 
 **Figure 15: Vérification du gain d'amplification du signal environ égal 100**
+  
+<img src="Images/Simulation_LTSpice/Question 1_bis.jpg"/></p>
+
+**Figure 16: Vérification du la tension de sortie du montage avec un courant d'entrée égal à 100nA**
 
 <div align="left">
   
@@ -207,7 +210,7 @@ Pour le premier filtre à l'entrée de l'AOP (R1 et C1):
 <div align="center">
 <img src="Images/Simulation_LTSpice/Simulation 3 filtre gauche.png"/></p>
 
-**Figure 16: Illustration graphique de la fréquence de coupure du filtre (R1 et C1)**
+**Figure 17: Illustration graphique de la fréquence de coupure du filtre (R1 et C1)**
 
 <div align="left">
   
@@ -216,7 +219,7 @@ Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le der
 <div align="center">
 <img src="Images/Simulation_LTSpice/Simulation 5 filtres centre et droit.png"/></p>
 
-**Figure 17: Illustration graphique des fréquences de coupure des deux filtres passe-bas**
+**Figure 18: Illustration graphique des fréquences de coupure des deux filtres passe-bas**
 
 <div align="left">
 
