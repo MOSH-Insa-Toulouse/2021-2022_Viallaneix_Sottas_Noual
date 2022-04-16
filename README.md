@@ -52,7 +52,9 @@ Nous utiliserons pour cela la résistivité du graphite, qui est suffisamment fa
 > Le dépôt de graphite effectué sur le papier sera alors représentatif de la flexion que ce dernier subit : les grains de graphite jouent le rôle de conducteur mais leur éloignement variera selon la flexion, et va donc influencer la résistance mesurée.
 
 <div align="center">
-<img src=""/></p>
+<img src="Images/Dessin Capteur graphite.png"/></p>
+
+**Figure 1: Première description schématique d'une mesure sur le capteur de graphite**
 
 <div align="left">
 </p>
@@ -60,7 +62,7 @@ Nous utiliserons pour cela la résistivité du graphite, qui est suffisamment fa
 > Dans l’exemple ci dessus, on mesurera pour une même tension appliquée que:
 
 <div align="center">
-<img src=""/></p>
+<img src="Images/Calculs/Formule 0.png"/></p>
 
 <div align="left">
 </p>
@@ -77,11 +79,11 @@ En effet, la dureté d’une mine correspond à ses proportions de graphite et d
 L’objectif étant d’extraire l’information utile du capteur ayant un très faible courant (environ 100 nA), le montage électrique doit être adapté de manière à mesurer des courants faibles. Selon les caractéristiques techniques du microcontrôleur Arduino (cf Datasheet), on ne peut pas mesurer directement de très faibles courants en raison de l’impédance de source (environ égale à quelques kOhms). Il est donc nécessaire d’utiliser un circuit amplificateur transimpédance composé d’un amplificateur opérationnel AOP pour convertir un courant issu du capteur en une tension mesurable par le CAN (Convertisseur Analogique-Numérique) de l’Arduino UNO.
 
 <p align="center"><img src="Images/solution classique transimpédance.png" align=middle width="456.690135pt" height="300.925785pt"/></p>
-<div align="center"> 
+<div align="center"></p>
   
-**Figure 1: Montage de transimpédance (ou convertisseur courant-tension)**
+**Figure 2: Montage de transimpédance (ou convertisseur courant-tension)**
   
-<div align="left">
+<div align="left"></p>
 
 L’inconvénient d’un montage classique de transimpédance est qu’il nécessite une grande résistance pour amplifier le signal et que la tension d’alimentation du capteur doit être négative. On peut donc ajouter un autre étage inverseur à la suite du premier montage : 
 
@@ -89,9 +91,9 @@ L’inconvénient d’un montage classique de transimpédance est qu’il néces
 <p align="center"><img src="Images/Circuit%20Transimp%C3%A9dance%202%20%C3%A9tages.jpg" align=middle width="556.690135pt" height="250.925785pt"/></p>
 <p align="center"><img src="Images/Calculs/Formule 2.png" align=middle width="194.090135pt" height="48.925785pt"/></p>
 
-<div align="center"> 
+<div align="center"></p>
   
-**Figures 2 et 3: Ajout d'un étage inverseur sur le montage de transimpédance et Calcul du gain du second montage**
+**Figures 3 et 4: Ajout d'un étage inverseur sur le montage de transimpédance et Calcul du gain du second montage**
 
 <div align="left"></p>
 
@@ -100,13 +102,13 @@ Dans le montage ci-dessus, le gain du second étage étant négatif compte-tenu 
 Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le montage.
 <p align="center"><img src="Images/Solution minimale.png" align=middle width="367.690135pt" height="242.925785pt"/></p>
 
-<div align="center"> 
+<div align="center"></p> 
 
-**Figure 4: Solution simplifiée pour le montage transimpédance**
+**Figure 5: Solution simplifiée pour le montage transimpédance**
 
 <p align="center"><img src="Images/Calculs/Formule 3.png" align=middle width="494.690135pt" height="23.925785pt"/></p>
 
-**Figure 5 : Calcul de la tension aux bornes de R1**
+**Figure 6: Calcul de la tension aux bornes de R1**
 
 <div align="left"></p>
   
@@ -118,9 +120,9 @@ Le Gain de ce montage et la Tension de sortie ADC sont décrits dans les calculs
 <p align="center"><img src="Images/Calculs/Formule 4.png" align=middle width="361.690135pt" height="52.925785pt"/></p>
 
 <p align="center"><img src="Images/Calculs/Formule 5.png" align=middle width="428.690135pt" height="23.925785pt"/></p>
-<div align="center"> 
+<div align="center"> </p>
   
-**Figure 6 : Calculs du gain du montage et de la tension de sortie**
+**Figure 7: Calculs du gain du montage et de la tension de sortie**
 
 <div align="left"></p>
   
@@ -133,12 +135,12 @@ Selon les données de la [Datasheet](LTC1050C.pdf) de l'AOP 1050C, on constate q
 En comparant la tension d'entrée (autour de 10mV `cf Figure 5`), on constate que l'offset de 5μV est très faible.
 De plus, on peut remarquer que cet AOP possède un mode commun incluant la masse ce qui correspond à notre montage électrique.
   
-<div align="center">
+<div align="center"></p>
 <p align="center"><img src="Images/Simulation_LTSpice/Electrical characteristics LTC1050C.jpg"/></p>
   
-**Figure 7 : Extrait de la datasheet dans la partie Electrical Characteristics**
+**Figure 8: Extrait de la datasheet dans la partie Electrical Characteristics**
 
-<div align="left">
+<div align="left"></p>
   
 Enfin, on constate que le courant de polarisation en entrée (Input Bias Current) est au maximum égale à 30pA, cela convient car nous effectuons des mesures de courant autour de 100nA. Il faut que le courant Isense `cf Figure 4` soit très faible devant 100nA et le reste du courant passe dans la résistance R1. 
 En respectant les différentes conditions énoncées précédemment, l'AOP 1050C est adapté pour notre circuit électronique.
@@ -153,71 +155,71 @@ Ensuite, on applique un filtre actif au niveau de l’amplificateur opérationne
 
 En intégrant les différents filtres, le montage ressemble à ceci : 
 
-<div align="center">
+<div align="center"></p>
 <p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique 1.png" align=middle width="952.090135pt" height="446.025785pt"/></p>
   
-**Figure 8 : Schéma du montage électrique avec les différents filtres**
+**Figure 9: Schéma du montage électrique avec les différents filtres**
 
-<div align="left">
+<div align="left"></p>
 
 On distingue 3 différents filtres où nous avons cherché pour chacun la fréquence de coupure et son rôle principal pour le filtrage : 
 
-<div align="center">
+<div align="center"></p>
 <p align="center"><img src="Images/Simulation_LTSpice/Distinction des filtres.png" align=middle width="742.090135pt" height="483.025785pt"/></p>
   
-**Figure 9 : Identification des différents filtres dans le montage**
+**Figure 10: Identification des différents filtres dans le montage**
 
-<div align="left">  
+<div align="left"></p> 
  
 Tout d'abord, le filtre passe-bas passif, placé à l'entrée de l'AOP, est constitué de R1(100kΩ) et C1(100nF). Il possède une fréquence de coupure théorique environ égale à 16Hz `cf Figure 7` . Il permet donc de filtrer les perturbations et les excès de bruit en courant sur la forme du signal d'entrée. 
 
 <p align="center"><img src="Images/Calculs/Formule 6.png" align=middle width="533.090135pt" height="48.025785pt"/></p>
-<div align="center"> 
+<div align="center"></p> 
 
-**Figure 10: Calcul de la fréquence de coupure du filtre passif (R1 et C1)**
+**Figure 11: Calcul de la fréquence de coupure du filtre passif (R1 et C1)**
 
-<div align="left">
+<div align="left"></p>
 
 Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP, est constitué de R3(100kΩ) et C4(1μF) en parallèle. Ce dernier possède une fréquence de coupure théorique environ égale à 1.6Hz `cf Figure 8`. Son rôle principal est de supprimer la composante parasite de 50Hz (du fait du couplage capacitif avec la tension 230V) qui perturbe significativement le signal `cf Figure XX`.
 
 <p align="center"><img src="Images/Calculs/Formule 7.png" align=middle width="453.090135pt" height="48.025785pt"/></p>
-<div align="center"> 
+<div align="center"></p>
 
-**Figure 11: Calcul de la fréquence de coupure du filtre actif (R3 et C4)**
+**Figure 12: Calcul de la fréquence de coupure du filtre actif (R3 et C4)**
 
-<div align="left">
+<div align="left"></p>
 
 Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué de R6(100kΩ) et C2(100nF). Il possède une fréquence de coupure théorique environ égale à 1.6kHz `cf Figure 9`. En sachant que la fréquence d'échantillonnage du micro-contrôleur est environ égale à 15,4kHz, il faut respecter la condition d'échantillonnage de Shannon à savoir:  
 
 <p align="center"><img src="Images/Calculs/Formule 8.png" align=middle width="524.090135pt" height="48.025785pt"/></p>
-<div align="center"> 
+<div align="center"></p> 
 
-**Figure 12: Calcul de la fréquence de coupure du filtre passif (R6 et C2) et Vérification de la condition d'échantillonnage de Shannon**
+**Figure 13: Calcul de la fréquence de coupure du filtre passif (R6 et C2) et Vérification de la condition d'échantillonnage de Shannon**
 
-<div align="left">
+<div align="left"></p>
 
 Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon `cf Figure ci-dessus`, le filtre permet de limiter les effets de repliement de spectre (rôle d'anti-aliasing) et de manière générale, le bruit lors du traitement du signal. 
 
 #### Schéma du circuit électronique final
 > Voici un première proposition du schéma électrique
   
-<div align="center">
+<div align="center"></p>
 <p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique 1.png" align=middle width="952.090135pt" height="446.025785pt"/></p>
 
-**Figure 13: Premier schéma du montage électronique**
+**Figure 14: Premier schéma du montage électronique**
 
-<div align="left">
+<div align="left"></p>
   
 Dans ce schéma, nous simulons le bruit en courant à l'entrée en mettant une capacité à côté du générateur de tension. On a ajouté une capacité C3 pour filtrer le bruit de la source d'alimentation.
   
 > On propose une optimisation du montage électronique en simulant le capteur de graphite `cf Figure ci-dessous`
   
-<div align="center">
+<div align="center"></p>
 <p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique optimisé.png" align=middle width="930 pt" height="420.025785pt"/></p>
 
-**Figure 14: Schéma électrique optimisé**
+**Figure 15: Schéma électrique optimisé**
 
-<div align="left">
+<div align="left"></p>
   
 Nous avons simulé notre capteur de graphite (cf rectangle en haut à gauche de la `figure précédente`). 
 > Commentaires à ajouter
@@ -227,16 +229,16 @@ Nous avons simulé notre capteur de graphite (cf rectangle en haut à gauche de 
   
 On vérifie les conditions optimales de fonctionnement du montage électronique en effectuant différentes simulations sur le logiciel *LTSPice* `cf figures ci-dessous`.
 
-<div align="center">
+<div align="center"></p>
 <img src="Images/Simulation_LTSpice/Simulation 1 illustration du gain montage.png"/></p>
 
-**Figure 15: Vérification du gain d'amplification du signal environ égal 100**
+**Figure 16: Vérification du gain d'amplification du signal environ égal 100**
   
 <img src="Images/Simulation_LTSpice/Question 1_bis.jpg"/></p>
 
-**Figure 16: Vérification du la tension de sortie du montage avec un courant d'entrée égal à 100nA**
+**Figure 17: Vérification du la tension de sortie du montage avec un courant d'entrée égal à 100nA**
 
-<div align="left">
+<div align="left"></p>
   
 Pour l'illustration graphique du gain du montage général, on distingue qu'il y a bien 3 filtres dans le circuit électronique grâce aux différentes variations du terme de phase (courbe en traits en pointillés `cf Figure `).
 > Mettre photo 
@@ -247,18 +249,18 @@ Pour le premier filtre à l'entrée de l'AOP (R1 et C1):
 <div align="center">
 <img src="Images/Simulation_LTSpice/Simulation 3 filtre gauche.png"/></p>
 
-**Figure 17: Illustration graphique de la fréquence de coupure du filtre (R1 et C1)**
+**Figure 18: Illustration graphique de la fréquence de coupure du filtre (R1 et C1)**
 
-<div align="left">
+<div align="left"></p>
   
 Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le dernier filtre à la sortie (R6 et C2):
   
 <div align="center">
 <img src="Images/Simulation_LTSpice/Simulation 5 filtres centre et droit.png"/></p>
 
-**Figure 18: Illustration graphique des fréquences de coupure des deux filtres passe-bas**
+**Figure 19: Illustration graphique des fréquences de coupure des deux filtres passe-bas**
 
-<div align="left">
+<div align="left"></p>
 
 
 > On vérifie l'incidence du courant d'entrée de l'amplificateur sur la tension de sortie par une simulation temporelle:
@@ -266,9 +268,9 @@ Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le der
 <div align="center">
 <img src="Images/Simulation_LTSpice/Question 3.jpg"/></p>
 
-**Figure 19: Illustration graphique de l'incidence du courant d'entrée sur la tension de sortie**
+**Figure 20: Illustration graphique de l'incidence du courant d'entrée sur la tension de sortie**
 
-<div align="left">
+<div align="left"></p>
   
 On peut remarquer dans cette image qu'à partir d'une valeur de 500nA pour le courant d'entrée, on obtient une tension pouvant saturer le convertisseur analogique-numérique de l'Arduino. 
 
@@ -277,24 +279,24 @@ On peut remarquer dans cette image qu'à partir d'une valeur de 500nA pour le co
 
 <div align="center">
 <img src="Images/Simulation_LTSpice/Question 5_6.jpg"/></p>
-<p align="center"><img src="Images/Calculs/Atténuation 50 Hz.png"/><img src=""/>
+<p align="center"><img src="Images/Calculs/Atténuation 50 Hz.png"/><img src="Images/Calculs/Atténuation échantillonnage.png"/></p>
 
-**Figure 20: Illustration graphique de l'atténuation du signal d'un bruit en courant pour deux fréquences spécifiques et calculs des atténuations**
+**Figures 21 et 22: Illustration graphique de l'atténuation du signal d'un bruit en courant pour deux fréquences spécifiques et calculs des atténuations**
 
-<div align="left">
+<div align="left"></p>
 
 Comme on peut le voir avec les calculs précédents, on constate qu'il y a une atténuation en bruit de courant environ égale à 40dB pour une fréquence autour de 50Hz et elle est environ égale à 100 dB pour un bruit en courant au voisinage de la fréquence de repliement de spectre.  
 
 
-> Simulation continue paramétrique (DC Sweep).
+> (Simulation continue paramétrique (DC Sweep))
 
 ### Code Arduino du système
 <div align="center">
 <img src="Images/logigramme.jpg"/></p>
 
-**Figure 21: Logigramme de notre code Arduino**
+**Figure 23: Logigramme de notre code Arduino**
 
-<div align="left">
+<div align="left"></p>
   
 Voici une présentation graphique de notre code Arduino.
   
@@ -302,12 +304,12 @@ Voici une présentation graphique de notre code Arduino.
 
   
   
-<div align="center">
+<div align="center"></p>
 
 
 **Figure : Aperçu visuel de notre application **
 
-<div align="left">
+<div align="left"></p>
     
 
 ### Réalisation du PCB
@@ -351,14 +353,19 @@ Uns fois le PCB réalisé, nous avons percé tous les trous des pins associés �
 ### Banc de tests
 > En Cours de réalisation, mettre 1-2 images sur le banc de tests fonctionnels
 
+> Le but de ce banc de test est de déterminer la sensibilité du capteur, de voir l’évolution de cette dernière selon la répétition des flexions et de comparer ces données avec un capteur commercialisé "Flex-Sensor".
 
-<div align="center"> 
+> Ce banc de test est composé d’un servomoteur pour une bonne précision sur les angles, ainsi que d’un support où l’on vient encastrer le capteur. Une roue où l’on positionne le bout du capteur est alors entraînée par le servomoteur et génère la flexion. Il est fait de plaques de contreplaqué superposées, qui ont été découpées au FabLab et il permet de garder le capteur le plus intact possible, car celui-ci n’est maintenu qu’aux deux extrêmités et non pas sur le dépôt de graphite lui-même.
+L’utilisateur détermine au préalable le nombre de répétitions souhaité à l’aide de l’encodeur rotatoire placé sur le PCB. Il peut ensuite récupérer les données (angle, itération de la mesure, résistance lue) sur le moniteur série et les traiter dans un logiciel comme Rmarkdown, Python via l'interpréteur Spyder IDE ou Qtiplot.
+Le capteur qui servira de référence comparative sera le Flex Sensor fourni dans le kit Arduino, qui possède déjà une datasheet.
+
+<div align="center"></p>
 
 ![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
 
-**Figure 14: Dessin 2D du banc de test**
+**Figure 23: Dessin 2D du banc de test**
 
-<div align="left">
+<div align="left"></p>
   
 ### Remerciements
 
