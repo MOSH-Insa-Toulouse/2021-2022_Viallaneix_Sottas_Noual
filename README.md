@@ -278,7 +278,8 @@ On peut remarquer dans cette image qu'à partir d'une valeur de 500nA pour le co
 
 <div align="center">
 <img src="Images/Simulation_LTSpice/Question 5_6.jpg"/></p>
-<p align="center"><img src="Images/Calculs/Atténuation 50 Hz.png"/><img src="Images/Calculs/Atténuation échantillonnage.png"/></p>
+<img src="Images/Calculs/Atténuation 50 Hz.png"/> 
+<p align="center"><img src="Images/Calculs/Atténuation échantillonnage.png"/></p>
 
 **Figures 21 et 22: Illustration graphique de l'atténuation du signal d'un bruit en courant pour deux fréquences spécifiques et calculs des atténuations**
 
