@@ -329,10 +329,10 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 * Largeur des pistes = 0.5 mm
 * Largeur d'isolation des pistes = 0.9 mm
 * Dimensions du trou pour l'écran OLED, le module Bluetooth et l'encodeur rotatoire = 2 mm * 2.5 mm
-* Diamètre du via (trou entre la face avant et arrières du PCB) = 
+* Diamètre du via (trou entre la face avant et arrières du PCB) = mm
 * Taille du trou de perçage pour l'écran OLED, le module Bluetooth et l'encodeur rotatoire, l'AOP et le potentiomètre digital = 1 mm
-* Dimensions du trou pour le support de l'AOP (pad n°1 rectangulaire et les autres pins sont ovales) = 1.8 mm * 2.5 mm
-* Taille du trou de perçage pour les résistances et les capacités = 2 mm
+* Dimensions du trou pour le support de l'AOP (pad n°1 rectangulaire et les autres pins sont ovales) =  mm * 2.5 mm
+* Taille du trou de perçage pour les résistances et les capacités =  mm
   
 > Mettre deux photos avec les composants et 1 photo 3D
   
