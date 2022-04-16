@@ -163,7 +163,7 @@ Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué 
 
 Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon `cf Figure ci-dessus`, le filtre permet de limiter les effets de repliement de spectre (rôle d'anti-aliasing) et de manière générale, le bruit lors du traitement du signal. 
 
-##### Schéma du circuit électronique final
+#### Schéma du circuit électronique final
 > Voici un première proposition du schéma électrique
   
 <div align="center">
@@ -173,13 +173,12 @@ Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon `
 
 <div align="left">
   
-Dans ce schéma, nous simulons le bruit en courant à l'entrée en mettant une capacité à côté du générateur de courant.
-  
+Dans ce schéma, nous simulons le bruit en courant à l'entrée en mettant une capacité à côté du générateur de tension. On a ajouté une capacité C3 pour filtrer le bruit de la source d'alimentation.
   
 > On propose une optimisation du montage électronique en simulant le capteur de graphite `cf Figure ci-dessous`
   
 <div align="center">
-<p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique optimisé.png" align=middle width="1037 pt" height="527.025785pt"/></p>
+<p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique optimisé.png" align=middle width="930 pt" height="420.025785pt"/></p>
 
 **Figure 14: Schéma électrique optimisé**
 
@@ -187,8 +186,41 @@ Dans ce schéma, nous simulons le bruit en courant à l'entrée en mettant une c
 
 
 
-##### Simulations sous LT-Spice
-Vérification graphique de la fréquence de coupure de chaque filtre
+#### Simulations sous LT-Spice
+  
+On vérifie les conditions optimales de fonctionnement du montage électronique `cf figures ci-dessous`.
+> Mettre une image supplémentaire. 
+
+<div align="center">
+<img src="Images/Simulation_LTSpice/Simulation 1 illustration du gain montage.png"/></p>
+
+**Figure 15: Vérification du gain d'amplification du signal environ égal 100**
+
+<div align="left">
+  
+Pour l'illustration graphique du gain du montage général, on distingue qu'il y a bien 3 filtres dans le circuit électronique grâce aux différentes variations du terme de phase (courbe en traits en pointillés `cf Figure `).
+> Mettre photo 
+
+> On vérifie graphiquement la fréquence de coupure de chaque filtre en effectuant une simulation fréquentielle (AC Sweep):
+
+Pour le premier filtre à l'entrée de l'AOP (R1 et C1):
+<div align="center">
+<img src="Images/Simulation_LTSpice/Simulation 3 filtre gauche.png"/></p>
+
+**Figure 16: Illustration graphique de la fréquence de coupure du filtre (R1 et C1)**
+
+<div align="left">
+  
+Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le dernier filtre à la sortie (R6 et C2):
+  
+<div align="center">
+<img src="Images/Simulation_LTSpice/Simulation 5 filtres centre et droite.png"/></p>
+
+**Figure 17: Illustration graphique des fréquences de coupure des deux filtres passe-bas**
+
+<div align="left">
+
+  
 > Simulation continue paramétrique (DC Sweep).
 > Simulation temporelle (Transient).
 > Simulation fréquentielle (AC Sweep).
