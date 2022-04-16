@@ -1,0 +1,11 @@
+
+# pdf / images
+*.pdf
+*.png
+*.jpg
+
+# PCB / KiCad
+/Shield
+
+
+
