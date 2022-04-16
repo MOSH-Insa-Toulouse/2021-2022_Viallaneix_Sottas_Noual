@@ -41,7 +41,6 @@ Granulometric sensor
    * [Partie 2: Conception du PCB](#partie-2-conception-du-pcb)
    * [Partie 3: Soudure des composants sur le PCB et premiers tests](#partie-3-soudure-des-composants-sur-le-pcb-et-premiers-tests)
 * [Banc de tests](#banc-de-tests)
-* [Remerciements](#remerciements)
 
 ***
 
@@ -292,7 +291,7 @@ Comme on peut le voir avec les calculs précédents, on constate qu'il y a une a
 
 ### Code Arduino du système
 <div align="center">
-<img src="Images/logigramme.jpg"/></p>
+<img src="https://github.com/MOSH-Insa-Toulouse/2021-2022_Viallaneix_Sottas_Noual/blob/39fd9ad23a14a9ccfff4c6776e45fc2be55771ee/Images/logigramme.jpg"/></p>
 
 **Figure 23: Logigramme de notre code Arduino**
 
@@ -366,7 +365,5 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 **Figure 23: Dessin 2D du banc de test**
 
 <div align="left"></p>
-  
-### Remerciements
 
 
