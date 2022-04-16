@@ -214,7 +214,7 @@ Pour le premier filtre à l'entrée de l'AOP (R1 et C1):
 Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le dernier filtre à la sortie (R6 et C2):
   
 <div align="center">
-<img src="Images/Simulation_LTSpice/Simulation 5 filtres centre et droite.png"/></p>
+<img src="Images/Simulation_LTSpice/Simulation 5 filtres centre et droit.png"/></p>
 
 **Figure 17: Illustration graphique des fréquences de coupure des deux filtres passe-bas**
 
