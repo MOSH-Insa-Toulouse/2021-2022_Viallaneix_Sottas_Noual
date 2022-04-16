@@ -8,7 +8,8 @@
 /Shield
 
 # application APK bluetooth
-.APK
+*.apk
+
 
 
 
