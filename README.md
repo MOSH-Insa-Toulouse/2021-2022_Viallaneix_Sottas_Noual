@@ -14,9 +14,9 @@ Granulometric sensor
 # Ce que fait ce projet 
 
 > La finalité du projet est de pouvoir estimer les forces et faiblesses de ces capteurs low-tech. Pour cela nous allons devoir les tester, déterminer leurs caractéristiques et leur limites d'utilisations, autrement dit déterminer leurs datasheets.
-> Pour cela nous allons concevoir un banc de mesures qui nous permettra dans un premier temps d'étalonner les capteurs (leurs sensibilités varient en fonction de la dureté) puis dans un deuxième temps de les éprouver dans des conditions et durées d'utilisation variées.
-> Les jeux de données issues de ces tests vont vite devenir conséquents et il sera utile de prévoir les scripts et la visualisation en sortie du banc de test et étalonnage.
-> La composante **étalonnage** du banc permet d'étalonner un capteur de sensibilité inconnue. La composante  **test** permet de renseigner la datasheet.
+> Pour cela, nous allons concevoir un banc de mesures qui nous permettra, dans un premier temps, d'étalonner les capteurs (leurs sensibilités varient en fonction de la dureté) puis, dans un deuxième temps, de les éprouver dans des conditions et durées d'utilisation variées.
+> Les jeux de données issues de ces tests vont devenir rapidement conséquents et il sera utile de prévoir les scripts et la visualisation en sortie du banc de test et étalonnage. 
+> La composante **étalonnage** du banc permet de calibrer un capteur de sensibilité inconnue. La composante **test** permet de renseigner la datasheet.
 
 
 # Les étapes
@@ -25,13 +25,50 @@ Granulometric sensor
 
 ***
 ## Les axes du projets
-> Sommaire à placer
+* [Présentation du capteur granulométrique](#présentation-du-capteur-granulométrique)
+* [Acquisition des données](#acquisition-des-données)
+  * [Carte Arduino](#la-carte-arduino)
+  * [Étude du circuit électrique](#le-conditionneur)
+    * [Partie 1: Mesure d'un très faible courant avec l'aide d'un micro-contrôleur](#partie-1-mesure-dun-très-faible-courant-avec-laide-dun-micro-contrôleur)
+       * [Vérification avec la Datasheet de l'AOP](#vérification-avec-la-datasheet-de-laop)
+    * [Partie 2: Mise en oeuvre du filtrage du signal](#partie-2-mise-en-oeuvre-du-filtrage-du-signal)
+    * [Schéma du circuit électronique final](#schéma-du-circuit-électronique-final)
+    * [Partie 3: Simulations sous *LTSpice*](#partie-3-simulations-sous-ltspice)
+  * [Code Arduino du système](#code-arduino-du-système)
+  * [Application sur Android](#application-sur-android)
+* [Réalisation du PCB](#réalisation-du-pcb)
+   * [Partie 1: Conception de la schématique et des connexions entre les composants électroniques](#partie-1-conception-de-la-schématique-et-des-connexions-entre-les-composants-électroniques)
+   * [Partie 2: Conception du PCB](#partie-2-conception-du-pcb)
+   * [Partie 3: Soudure des composants sur le PCB et premiers tests](#partie-3-soudure-des-composants-sur-le-pcb-et-premiers-tests)
+* [Banc de tests](#banc-de-tests)
+* [Remerciements](#remerciements)
+
 ***
 
 ### Présentation du capteur granulométrique
-### Le capteur
-> Hello voici la description du capteur. 
-#### Propriété d'un système granulaire
+> Le capteur sélectionné dans le cadre de ce projet est un dépôt de graphite sur un papier, effectué à l’aide d’un crayon plus ou moins gras. 
+Nous utiliserons pour cela la résistivité du graphite, qui est suffisamment faible pour laisser circuler un courant mesurable. Néanmoins, avec cette résistivité de 8 µΩ.m (contre 0,017 µΩ.m pour le cuivre), il faudra utiliser un montage amplificateur dans notre banc de test.
+
+> Le dépôt de graphite effectué sur le papier sera alors représentatif de la flexion que ce dernier subit : les grains de graphite jouent le rôle de conducteur mais leur éloignement variera selon la flexion, et va donc influencer la résistance mesurée.
+
+<div align="center">
+<img src=""/></p>
+
+<div align="left">
+</p>
+
+> Dans l’exemple ci dessus, on mesurera pour une même tension appliquée que:
+
+<div align="center">
+<img src=""/></p>
+
+<div align="left">
+</p>
+
+> L’intérêt de ce capteur se situe dans son aspect low-tech qui lui permet d’être facilement produit, mais pas uniquement :  la vaste gamme de dureté des mines de crayon (H, F, HB, B) offre un large choix pour la résistivité du dépôt.
+En effet, la dureté d’une mine correspond à ses proportions de graphite et d’argile. Le graphite est, par exemple, plus présent dans un crayon dit « gras » de type B que dans un crayon de type H. Ainsi, nous disposons assez simplement d’un large panel de capteurs pour éventuellement les comparer à l’aide du banc de tests.
+
+(#### Propriété d'un système granulaire)
 ### Acquisition des données
 #### La carte Arduino
 #### Le conditionneur
@@ -56,7 +93,7 @@ L’inconvénient d’un montage classique de transimpédance est qu’il néces
   
 **Figures 2 et 3: Ajout d'un étage inverseur sur le montage de transimpédance et Calcul du gain du second montage**
 
-<div align="left">
+<div align="left"></p>
 
 Dans le montage ci-dessus, le gain du second étage étant négatif compte-tenu de son caractère inverseur (`cf Figure 3`), la résistance R1 du premier étage n’a plus besoin d’avoir une grande valeur. De plus, l’alimentation du capteur est donc positive grâce au second montage inverseur du fait des produits des gains de deux étages. 
 
@@ -71,7 +108,7 @@ Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le 
 
 **Figure 5 : Calcul de la tension aux bornes de R1**
 
-<div align="left">
+<div align="left"></p>
   
 En calculant la tension aux bornes de la résistance R1, on obtient une tension environ égale à 10 mV d'après la `Figure 4`.
 
@@ -85,7 +122,7 @@ Le Gain de ce montage et la Tension de sortie ADC sont décrits dans les calculs
   
 **Figure 6 : Calculs du gain du montage et de la tension de sortie**
 
-<div align="left">
+<div align="left"></p>
   
 Si on a un courant nul en entrée, on veut alors obtenir une tension ADC nulle en sortie, cela implique qu’il n’y ait pas de dérives en tension de la part de l’AOP.
 Les principales contraintes pour le choix de l’amplificateur opérationnel sont le faible courant d’entrée et un très faible offset de tension devant être négligeable devant 10mV (tension aux bornes de R1).
@@ -93,18 +130,17 @@ Les principales contraintes pour le choix de l’amplificateur opérationnel son
 ##### Vérification avec la Datasheet de l'AOP
 
 Selon les données de la [Datasheet](LTC1050C.pdf) de l'AOP 1050C, on constate qu'il possède un faible offset de tension d'environ 5μV au maximum et un très faible drift pour l'offset de tension à environ 0.05μV/°C. Cela indique la bonne stabilité de l'amplificateur opérationnel. Par comparaison, les AOP utilisés traditionnellement en salle de TP possèdent un offset autour de 5mV, une valeur 1000 fois plus grande que celle du 1050C.
-En comparant la tension d'entrée (autour de 10mV `cf Figure 5`), on constate que l'offset de 5μV est très faible. 
-De plus, on peut remarquer que cet AOP possède un mode commun incluant la masse ce qui correspond à notre montage électrique. 
-
-> Photo
+En comparant la tension d'entrée (autour de 10mV `cf Figure 5`), on constate que l'offset de 5μV est très faible.
+De plus, on peut remarquer que cet AOP possède un mode commun incluant la masse ce qui correspond à notre montage électrique.
   
-<div align="center"> 
+<div align="center">
+<p align="center"><img src="Images/Simulation_LTSpice/Electrical characteristics LTC1050C.jpg"/></p>
   
 **Figure 7 : Extrait de la datasheet dans la partie Electrical Characteristics**
 
 <div align="left">
   
-Enfin, on constate que le courant de polarisation en entrée (Input Bias Current) est au maximum égale à 30pA, cela convient car nous effectuons des mesures de courant autour de 100nA.
+Enfin, on constate que le courant de polarisation en entrée (Input Bias Current) est au maximum égale à 30pA, cela convient car nous effectuons des mesures de courant autour de 100nA. Il faut que le courant Isense `cf Figure 4` soit très faible devant 100nA et le reste du courant passe dans la résistance R1. 
 En respectant les différentes conditions énoncées précédemment, l'AOP 1050C est adapté pour notre circuit électronique.
 
 
@@ -183,12 +219,13 @@ Dans ce schéma, nous simulons le bruit en courant à l'entrée en mettant une c
 
 <div align="left">
   
-> Commentaires à donner rapidement 
-  
+Nous avons simulé notre capteur de graphite (cf rectangle en haut à gauche de la `figure précédente`). 
+> Commentaires à ajouter
 
-#### Simulations sous LT-Spice
+
+#### Partie 3: Simulations sous *LTSpice*
   
-On vérifie les conditions optimales de fonctionnement du montage électronique en effectuant différentes simulations sur le logiciel LTSPice `cf figures ci-dessous`.
+On vérifie les conditions optimales de fonctionnement du montage électronique en effectuant différentes simulations sur le logiciel *LTSPice* `cf figures ci-dessous`.
 
 <div align="center">
 <img src="Images/Simulation_LTSpice/Simulation 1 illustration du gain montage.png"/></p>
@@ -223,19 +260,97 @@ Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le der
 
 <div align="left">
 
+
+> On vérifie l'incidence du courant d'entrée de l'amplificateur sur la tension de sortie par une simulation temporelle:
+
+<div align="center">
+<img src="Images/Simulation_LTSpice/Question 3.jpg"/></p>
+
+**Figure 19: Illustration graphique de l'incidence du courant d'entrée sur la tension de sortie**
+
+<div align="left">
   
+On peut remarquer dans cette image qu'à partir d'une valeur de 500nA pour le courant d'entrée, on obtient une tension pouvant saturer le convertisseur analogique-numérique de l'Arduino. 
+
+  
+> On observe graphiquement l'atténuation globale du signal d'un bruit en courant de 50 Hz ainsi que celle associée à un bruit en courant à la fréquence de repliement de spectre autour de 7 kHz. 
+
+<div align="center">
+<img src="Images/Simulation_LTSpice/Question 5_6.jpg"/></p>
+<p align="center"><img src="Images/Calculs/Atténuation 50 Hz.png"/><img src=""/>
+
+**Figure 20: Illustration graphique de l'atténuation du signal d'un bruit en courant pour deux fréquences spécifiques et calculs des atténuations**
+
+<div align="left">
+
+Comme on peut le voir avec les calculs précédents, on constate qu'il y a une atténuation en bruit de courant environ égale à 40dB pour une fréquence autour de 50Hz et elle est environ égale à 100 dB pour un bruit en courant au voisinage de la fréquence de repliement de spectre.  
+
+
 > Simulation continue paramétrique (DC Sweep).
-> Simulation temporelle (Transient).
-> Simulation fréquentielle (AC Sweep).
 
 ### Code Arduino du système
+<div align="center">
+<img src="Images/logigramme.jpg"/></p>
 
-![logigramme](Images/logigramme.jpg "Logigramme")
-> En Cours
-###### Tests KiCad & LT-Spice
+**Figure 21: Logigramme de notre code Arduino**
+
+<div align="left">
+  
+Voici une présentation graphique de notre code Arduino.
+  
+### Application sur Android
+
+  
+  
+<div align="center">
+
+
+**Figure : Aperçu visuel de notre application **
+
+<div align="left">
+    
+
 ### Réalisation du PCB
+
+Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premier modèle de PCB avec l'aide du logiciel *KiCAD*. 
+
+#### Partie 1: Conception de la schématique et des connexions entre les composants électroniques
+
+> Lors de cette étape, nous avons choisi un modèle basé sur l'Arduino UNO pour avoir les bonnes dimensions de la carte et les pins de connexion adéquats. Afin de réaliser précisément le PCB, nous avons dû concevoir certains composants électroniques nous-mêmes dans la partie Schématique (écran OLED, Bluetooth, l'amplificateur LTC1050C, l'encodeur rotatoire et le potentiomètre digital)  `cf Figures ci-dessous`
+  
+> **Ajouter deux photos**
+
+#### Partie 2: Conception du PCB
+
+> Dans cette partie, nous plaçons virtuellement les différents composants sur le PCB et nous effectuons toutes les connexions entre les pins de composants et ceux de la carte Arduino. Nos différentes professeurs réferents (Mr Jérémie Grisolia et Mme Catherine Crouzet) nous ont indiqués les consignes à respecter pour la réalisation du PCB: 
+  
+* Largeur des pistes = 0.5 mm
+* Largeur d'isolation des pistes = 0.9 mm
+* Dimensions du trou pour l'écran OLED, le module Bluetooth et l'encodeur rotatoire = 2 mm * 2.5 mm
+* Diamètre du via (trou entre la face avant et arrières du PCB) = 
+* Taille du trou de perçage pour l'écran OLED, le module Bluetooth et l'encodeur rotatoire, l'AOP et le potentiomètre digital = 1 mm
+* Dimensions du trou pour le support de l'AOP (pad n°1 rectangulaire et les autres pins sont ovales) = 1.8 mm * 2.5 mm
+* Taille du trou de perçage pour les résistances et les capacités = 2 mm
+  
+> Mettre deux photos avec les composants et 1 photo 3D
+  
+Avec l'aide de Mme Catherine Crouzet, nous avons réalisé le PCB selon le protocole suivant:
+
+* Insolation de la plaque de résine positive par photo-lithographie UV par contact avec un masque imprimé sur un film transparent, provenant du logiciel *KiCAD*. Cette résine est choisie de telle manière à être sensible aux rayons UV.
+Une fois l'insolation réalisée, la partie de la résine insolée est dissoute dans une solution de développeur. Le reste de la résine, étant protégé par le masque, reste intact. On observe l'apparition des pistes du circuit sur le PCB.
+  
+* Passage dans un bain de péroxyde de fer pour enlever les résidus de la piste de cuivre sur le PCB
+  
+* Nettoyage et Séchage de la plaque à l'eau naturelle
+
+#### Partie 3: Soudure des composants sur le PCB et premiers tests
+ 
+Uns fois le PCB réalisé, nous avons percé tous les trous des pins associés à chaque composant électronique puis nous avons soudé les différents composants et les broches latérales entre le PCB et la carte Arduino.
+
+
 ### Banc de tests
-> En Cours de réalisation 
+> En Cours de réalisation, mettre 1-2 images sur le banc de tests fonctionnels
+
 
 <div align="center"> 
 
@@ -244,3 +359,7 @@ Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le der
 **Figure 14: Dessin 2D du banc de test**
 
 <div align="left">
+  
+### Remerciements
+
+
