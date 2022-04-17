@@ -326,13 +326,14 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 
 > Dans cette partie, nous plaçons virtuellement les différents composants sur le PCB et nous effectuons toutes les connexions entre les pins de composants et ceux de la carte Arduino. Nos différentes professeurs réferents (Mr Jérémie Grisolia et Mme Catherine Crouzet) nous ont indiqués les consignes à respecter pour la réalisation du PCB: 
   
-* Largeur des pistes = 0.5 mm
+* Largeur des pistes = 0.6 mm
 * Largeur d'isolation des pistes = 0.9 mm
 * Dimensions du trou pour l'écran OLED, le module Bluetooth et l'encodeur rotatoire = 2 mm * 2.5 mm
-* Diamètre du via (trou entre la face avant et arrières du PCB) = mm
+* Diamètre du via (trou entre la face avant et arrières du PCB) = 2 mm
+* Taille du trou de perçage du via = 0.8 mm
 * Taille du trou de perçage pour l'écran OLED, le module Bluetooth et l'encodeur rotatoire, l'AOP et le potentiomètre digital = 1 mm
-* Dimensions du trou pour le support de l'AOP (pad n°1 rectangulaire et les autres pins sont ovales) =  mm * 2.5 mm
-* Taille du trou de perçage pour les résistances et les capacités =  mm
+* Dimensions du trou pour le support de l'AOP (pad n°1 rectangulaire et les autres pins sont ovales) = 2 mm * 2.5 mm
+* Taille du trou de perçage pour les résistances et les capacités = 0.8 mm
   
 > Mettre deux photos avec les composants et 1 photo 3D
   
