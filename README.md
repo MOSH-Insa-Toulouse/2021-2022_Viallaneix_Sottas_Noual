@@ -400,6 +400,15 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 
 <div align="left"></p>
 
+> Nous l'avons ensuite réalisé au FabLab avec l'aide d'une découpe laser: 
+
+<div align="center">
+<img src="Images/Réalisation Banc de test.jpg" width="733.090135pt" height="550.025785pt"/></p>
+
+**Figure 30: Réalisation du banc de test au FabLab**
+
+<div align="left"></p>
+
 ### Measurement System Analysis
 
 
