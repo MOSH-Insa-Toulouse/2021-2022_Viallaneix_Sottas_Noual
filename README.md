@@ -341,7 +341,7 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 
 #### Partie 2: Conception du PCB
 
-> Dans cette partie, nous plaçons virtuellement les différents composants sur le PCB et nous effectuons toutes les connexions entre les pins de composants et ceux de la carte Arduino. Nos différentes professeurs réferents (Mr Jérémie Grisolia et Mme Catherine Crouzet) nous ont indiqués les consignes à respecter pour la réalisation du PCB: 
+> Dans cette partie, nous plaçons virtuellement les différents composants sur le PCB et nous effectuons toutes les connexions entre les pins de composants et ceux de la carte Arduino. Nos différents professeurs réferents (Mr Jérémie Grisolia et Mme Catherine Crouzet) nous ont indiqués les consignes à respecter pour la réalisation du PCB: 
   
 * Largeur des pistes = 0.6 mm
 * Largeur d'isolation des pistes = 0.9 mm
