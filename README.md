@@ -3,7 +3,7 @@ Granulometric sensor
 
 # Informations générales
 > Ce projet s'inscrit dans le cadre de l'UF _"Du capteur au banc de test en open source hardware"_.
-> Le cœur du projet bat sur fréquence de la **LOW TECH**. Nous partirons de la fabrication d'un capteur granulométrique élaboré à partir d'une feuille de papier sur laquelle une couche de carbone sera déposée à l'aide d'un crayon à papier (panel de dureté entre HB et 9B) selon un motif prédeterminé. À ce corps d'épreuve, deux électrodes insérées aux extrémités du motif permettront la circulation d'un courant. Une déformation du capteur entraînera une variation du courant mesurable par un système d'acquisition de données. Les enjeux du projet sont donc multiples!
+> Le cœur du projet bat sur la fréquence de la **LOW TECH**. Nous partirons de la fabrication d'un capteur granulométrique élaboré à partir d'une feuille de papier sur laquelle une couche de carbone sera déposée à l'aide d'un crayon à papier (panel de dureté entre HB et 9B) selon un motif prédeterminé. À ce corps d'épreuve, deux électrodes insérées aux extrémités du motif permettront la circulation d'un courant. Une déformation du capteur entraînera une variation du courant mesurable par un système d'acquisition de données. Les enjeux du projet sont donc multiples!
 * **Physique** : sur les propriétés d'un capteur granulométrique
 * **Technique** : sur la conception et le développement d'un système d'acquisition
 * **Exploratoire** : par l'utilisation des outils et concepts de l'Open Source Hardware.
@@ -13,15 +13,11 @@ Granulometric sensor
 
 # Ce que fait ce projet 
 
-> La finalité du projet est de pouvoir estimer les forces et faiblesses de ces capteurs low-tech. Pour cela nous allons devoir les tester, déterminer leurs caractéristiques et leur limites d'utilisations, autrement dit déterminer leurs datasheets.
-> Pour cela, nous allons concevoir un banc de mesures qui nous permettra, dans un premier temps, d'étalonner les capteurs (leurs sensibilités varient en fonction de la dureté) puis, dans un deuxième temps, de les éprouver dans des conditions et durées d'utilisation variées.
+> La finalité du projet est de pouvoir estimer les forces et faiblesses de ces capteurs low-tech. Pour cela nous allons devoir les tester, déterminer leurs caractéristiques et leur limites d'utilisations.
+> Pour y parvenir, nous allons concevoir un banc de mesures qui nous permettra, dans un premier temps, d'étalonner les capteurs (leurs sensibilités varient en fonction de la dureté) puis, dans un deuxième temps, de les éprouver dans des conditions et durées d'utilisation controlées.
 > Les jeux de données issues de ces tests vont devenir rapidement conséquents et il sera utile de prévoir les scripts et la visualisation en sortie du banc de test et étalonnage. 
-> La composante **étalonnage** du banc permet de calibrer un capteur de sensibilité inconnue. La composante **test** permet de renseigner la datasheet.
-
-
-# Les étapes
+> La composante **étalonnage** du banc permet de détérminer la sensibilité un capteur de sensibilité inconnue. La composante **test** permet de soumettre le capteur à des séries de fléxion/déflexion fonction d'un angle compris entre -85 et + 85 degrés par rapport à la position d'équilibre.
 > Dans la suite du projet le capteur désignera le corps d'épreuve et le banc de test permettant l'acquisition des données.
-> La première étape consiste à la réalisation du capteur granulométrique. Ce capteur est utilisé pour le développement du banc d'étalonnage
 
 ***
 ## Les axes du projets
