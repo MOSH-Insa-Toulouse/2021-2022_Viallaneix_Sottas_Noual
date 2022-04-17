@@ -386,6 +386,7 @@ Uns fois le PCB réalisé, nous avons percé tous les trous des pins associés �
 L’utilisateur détermine au préalable le nombre de répétitions souhaité à l’aide de l’encodeur rotatoire placé sur le PCB. Il peut ensuite récupérer les données (angle, itération de la mesure, résistance lue) sur le moniteur série et les traiter dans un logiciel comme Rmarkdown, Python via l'interpréteur Spyder IDE ou Qtiplot.
 Le capteur qui servira de référence comparative sera le Flex Sensor fourni dans le kit Arduino, qui possède déjà une datasheet.
 
+> Nous avons élaboré un premier modèle en 2D de notre banc de tests: 
 <div align="center"></p>
 
 ![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
@@ -393,5 +394,9 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 **Figure 29: Dessin 2D du banc de test**
 
 <div align="left"></p>
+
+
+
+
 
 
