@@ -325,13 +325,17 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 <img src="Images/Schématique Carte Arduino.png"/></p>
  
 **Figure 25: Schéma des pins de connexion de la carte Arduino UNO**
+
+<img src="Images/PCB/Schématique du circuit électronique.png"/></p>
+ 
+**Figure 26: Schéma du circuit électronique**
  
 <img src="Images/Module OLED.png"/><img src=""/></p>
-<img src="Images/module Bluetooth.png"/><img src=""/></p>
+<img src="Images/module Bluetooth.png"/><img src="" /></p>
 <img src="Images/Encodeur rotatoire.png"/><img src=""/></p>
 <img src="Images/Potentiomètre digital.png"/><img src=""/></p>
 
-**Figures 26: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
+**Figures 27: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
 
 <div align="left"></p>
 
