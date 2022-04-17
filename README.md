@@ -330,10 +330,10 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
  
 **Figure 26: Schéma du circuit électronique**
  
-<img src="Images/Module OLED.png"/><img src=""/></p>
-<img src="Images/module Bluetooth.png"/><img src="" /></p>
-<img src="Images/Encodeur rotatoire.png"/><img src=""/></p>
-<img src="Images/Potentiomètre digital.png"/><img src=""/></p>
+<img src="Images/PCB/Empreinte OLED.png"/></p>
+<img src="Images/PCB/Empreinte Bluetooth.png"/></p>
+<img src="Images/PCB/Empreinte encodeur rotatoire.png"/></p>
+<img src="Images/PCB/Empreinte potentiomètre digital.png"/></p>
 
 **Figures 27: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
 
@@ -353,7 +353,7 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 * Taille du trou de perçage pour les résistances et les capacités = 0.8 mm
   
 <div align="center">
-<img src="Images/PCB KiCAD pistes.png"/><img src=""/></p>
+<img src="Images/PCB KiCAD pistes.png"/></p>
 
 **Figure 27: Schémas des pistes sur le PCB**
 
