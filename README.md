@@ -307,7 +307,7 @@ Voici une présentation graphique de notre code Arduino.
 <div align="center"></p>
 
 
-**Figure : Aperçu visuel de notre application **
+**Figure 24: Aperçu visuel de notre application **
 
 <div align="left"></p>
     
@@ -318,9 +318,21 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 
 #### Partie 1: Conception de la schématique et des connexions entre les composants électroniques
 
-> Lors de cette étape, nous avons choisi un modèle basé sur l'Arduino UNO pour avoir les bonnes dimensions de la carte et les pins de connexion adéquats. Afin de réaliser précisément le PCB, nous avons dû concevoir certains composants électroniques nous-mêmes dans la partie Schématique (écran OLED, Bluetooth, l'amplificateur LTC1050C, l'encodeur rotatoire et le potentiomètre digital)  `cf Figures ci-dessous`
-  
-> **Ajouter deux photos**
+> Lors de cette étape, nous avons choisi un modèle basé sur l'Arduino UNO pour avoir les bonnes dimensions de la carte et les pins de connexion adéquats. Afin de réaliser précisément le PCB, nous avons dû concevoir certains composants électroniques nous-mêmes dans la partie Schématique (écran OLED, module Bluetooth, l'amplificateur LTC1050C, l'encodeur rotatoire et le potentiomètre digital)  `cf Figures ci-dessous`
+
+<div align="center">
+<img src="Images/Schématique Carte Arduino.png"/></p>
+ 
+**Figure 25: Schéma des pins de connexion de la carte Arduino UNO**
+ 
+<img src="Images/Module OLED.png"/><img src=""/></p>
+<img src="Images/module Bluetooth.png"/><img src=""/></p>
+<img src="Images/Encodeur rotatoire.png"/><img src=""/></p>
+<img src="Images/Potentiomètre digital.png"/><img src=""/></p>
+
+**Figures 26: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
+
+<div align="left"></p>
 
 #### Partie 2: Conception du PCB
 
@@ -335,16 +347,30 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 * Dimensions du trou pour le support de l'AOP (pad n°1 rectangulaire et les autres pins sont ovales) = 2 mm * 2.5 mm
 * Taille du trou de perçage pour les résistances et les capacités = 0.8 mm
   
-> Mettre deux photos avec les composants et 1 photo 3D
+<div align="center">
+<img src="Images/PCB KiCAD pistes.png"/><img src=""/></p>
+
+**Figure 27: Schémas des pistes sur le PCB**
+
+<div align="left"></p>
+
+> Mettre une photo 3D
   
 Avec l'aide de Mme Catherine Crouzet, nous avons réalisé le PCB selon le protocole suivant:
 
-* Insolation de la plaque de résine positive par photo-lithographie UV par contact avec un masque imprimé sur un film transparent, provenant du logiciel *KiCAD*. Cette résine est choisie de telle manière à être sensible aux rayons UV.
+* Insolation de la plaque de résine positive par photo-lithographie UV par contact avec un masque `cf Figure ci-dessous` imprimé sur un film transparent, provenant du logiciel *KiCAD*. Cette résine est choisie de telle manière à être sensible aux rayons UV.
 Une fois l'insolation réalisée, la partie de la résine insolée est dissoute dans une solution de développeur. Le reste de la résine, étant protégé par le masque, reste intact. On observe l'apparition des pistes du circuit sur le PCB.
   
 * Passage dans un bain de péroxyde de fer pour enlever les résidus de la piste de cuivre sur le PCB
   
 * Nettoyage et Séchage de la plaque à l'eau naturelle
+
+<div align="center">
+<img src="Images/Masque PCB.png" width="654.090135pt" height="500.025785pt"/></p>
+
+**Figure 28: Masque imprimé du PCB sur un film transparent**
+
+<div align="left"></p>
 
 #### Partie 3: Soudure des composants sur le PCB et premiers tests
  
@@ -364,7 +390,7 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 
 ![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
 
-**Figure 23: Dessin 2D du banc de test**
+**Figure 29: Dessin 2D du banc de test**
 
 <div align="left"></p>
 
