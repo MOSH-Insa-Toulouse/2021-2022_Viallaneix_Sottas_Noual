@@ -330,10 +330,10 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
  
 **Figure 26: Schéma du circuit électronique**
  
-<img src="Images/PCB/Empreinte OLED.png"/></p>
-<img src="Images/PCB/Empreinte Bluetooth.png"/></p>
-<img src="Images/PCB/Empreinte encodeur rotatoire.png"/></p>
-<img src="Images/PCB/Empreinte potentiomètre digital.png"/></p>
+<img src="Images/PCB/Empreinte OLED.png" width="651.090135pt" height="200.025785pt"/></p>
+<img src="Images/PCB/Empreinte Bluetooth.png" width="874.090135pt" height="200.025785pt"/></p>
+<img src="Images/PCB/Empreinte encodeur rotatoire.png" width="899.090135pt" height="200.025785pt"/></p>
+<img src="Images/PCB/Empreinte potentiomètre digital.png" width="477.090135pt" height="260.025785pt"/></p>
 
 **Figures 27: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
 
