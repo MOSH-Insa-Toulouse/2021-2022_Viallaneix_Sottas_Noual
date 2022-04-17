@@ -285,7 +285,7 @@ On peut remarquer dans cette image qu'à partir d'une valeur de 500nA pour le co
 
 <div align="left"></p>
 
-Comme on peut le voir avec les calculs précédents, on constate qu'il y a une atténuation en bruit de courant environ égale à 40dB pour une fréquence autour de 50Hz et elle est environ égale à 100 dB pour un bruit en courant au voisinage de la fréquence de repliement de spectre.  
+Comme on peut le voir avec les calculs précédents, on constate qu'il y a une atténuation en bruit de courant environ égale à 40dB pour une fréquence autour de 50Hz et elle est environ égale à 100 dB pour un bruit en courant au voisinage de la fréquence de repliement de spectre. Cela montre bien que le signal peut être fortement perturbé et atténué si on laisse la composante fréquentielle à 50 Hz et si on ne respecte la condition d'échantillonnage.   
 
 
 > (Simulation continue paramétrique (DC Sweep))
@@ -366,7 +366,7 @@ Une fois l'insolation réalisée, la partie de la résine insolée est dissoute 
 * Nettoyage et Séchage de la plaque à l'eau naturelle
 
 <div align="center">
-<img src="Images/Masque PCB.png" width="654.090135pt" height="500.025785pt"/></p>
+<img src="Images/Masque PCB.png"/></p>
 
 **Figure 28: Masque imprimé du PCB sur un film transparent**
 
