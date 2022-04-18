@@ -16,7 +16,7 @@ Granulometric sensor
 > La finalité du projet est de pouvoir estimer les forces et faiblesses de ces capteurs low-tech. Pour cela nous allons devoir les tester, déterminer leurs caractéristiques et leur limites d'utilisations.
 > Pour y parvenir, nous allons concevoir un banc de mesures qui nous permettra, dans un premier temps, d'étalonner les capteurs (leurs sensibilités varient en fonction de la dureté) puis, dans un deuxième temps, de les éprouver dans des conditions et durées d'utilisation controlées.
 > Les jeux de données issues de ces tests vont devenir rapidement conséquents et il sera utile de prévoir les scripts et la visualisation en sortie du banc de test et étalonnage. 
-> La composante **étalonnage** du banc permet de détérminer la sensibilité un capteur de sensibilité inconnue. La composante **test** permet de soumettre le capteur à des séries de fléxion/déflexion fonction d'un angle compris entre -85 et + 85 degrés par rapport à la position d'équilibre.
+> La composante **étalonnage** du banc permet de détérminer la sensibilité un capteur de sensibilité inconnue. La composante **test** permet de soumettre le capteur à des séries de flexion/déflexion fonction d'un angle compris entre -85 et +85 degrés par rapport à la position d'équilibre.
 > Dans la suite du projet le capteur désignera le corps d'épreuve et le banc de test permettant l'acquisition des données.
 
 ***
@@ -71,8 +71,7 @@ En effet, la dureté d’une mine correspond à ses proportions de graphite et d
 Dans notre projet, nous allons utiliser la carte Arduino UNO possédant le microcontrôleur ATMega328. 
 
 <div align="center">
-<img src="Images/Carte Arduino UNO.png" width="357.090135pt" height="300.05785pt"/></p>
-<img src="Images/Brochage carte Arduino.png"width="265.090135pt" height="350.025785pt"/></p>
+<img src="Images/Carte Arduino Uno.png"/></p>
 
 **Figure 2: Illustration de la carte Arduino UNO et Brochage de la carte Arduino**
 
