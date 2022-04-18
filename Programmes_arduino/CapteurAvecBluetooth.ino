@@ -104,7 +104,7 @@ void loop() {
   ////////////////////  INITIALISATION MENU
   clic=1;
   encoder0Pos = 0;
-  delay(500);
+  delay(50);
 
 
   ////////////////////  MESURE DE LA TENSION ET ADAPTATION POTENTIOMETRE R2
@@ -130,6 +130,7 @@ void loop() {
   Serial.print("\t\t\tRsensor : ");
   Serial.print(Rsensor);
   Serial.println(" MOhms");
+  //problème avec la valeur de Rsensor, mauvaise formule probablement
 
   
   ////////////////////  MENU ET NAVIGATION
@@ -141,7 +142,7 @@ void loop() {
   if (menu==PRINCIPAL)
   {
     
-    if(encoder0Pos==1)
+    if(encoder0Pos==1)  // le faire sous forme de tableaux 
     {
     if (ligne<2){ligne+=1;}
     else {ligne=0;}
@@ -196,7 +197,7 @@ void loop() {
 
   else if (menu==SERIALSENSE)
   {
-    if(encoder0Pos==1)
+    if(encoder0Pos==1)  // le faire sous forme de tableaux 
     {
       Nb+=1;
     }
@@ -246,7 +247,13 @@ void setPotWiper(int addr, int pos)
 ////////////////////  ENCODEUR ROTATOIRE POUR LE CLIC
 void doSwitch()
 {
+  static unsigned long tempsprecedent = 0;
+  unsigned long temps = millis();
+  if (temps - tempsprecedent > 100) 
+  {
     clic = 0;
+  }
+  tempsprecedent=temps;
 }
 
 
