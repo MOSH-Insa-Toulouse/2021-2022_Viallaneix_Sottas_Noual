@@ -304,7 +304,7 @@ L'application mobile associée au banc de test fonctionne avec un timer identiqu
 <div align="center"></p>
 <img src="APK/FaceAvantAPK.png"/></p>
 
-**Figure 24: Aperçu visuel de notre application **
+**Figure 24: Aperçu visuel de notre application**
 
 <div align="left"></p>
 
@@ -312,7 +312,7 @@ L'application mobile associée au banc de test fonctionne avec un timer identiqu
 <img src="APK/BlocsAPK1.png"/></p>
 <img src="APK/BlocsAPK2.png"/></p>
 
-**Figure 25: Extrait des blocs pour la réalisation de l'application Android sur *MIT App Inventor* **
+**Figures 25 et 26: Extraits des blocs pour la réalisation de l'application Android sur *MIT App Inventor***
 
 <div align="left"></p>   
 
@@ -327,18 +327,18 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 <div align="center">
 <img src="Images/Schématique Carte Arduino.png"/></p>
  
-**Figure 26: Schéma des pins de connexion de la carte Arduino UNO**
+**Figure 27: Schéma des pins de connexion de la carte Arduino UNO**
 
 <img src="Images/PCB/Schématique du circuit électronique.png"/></p>
  
-**Figure 27: Schéma du circuit électronique**
+**Figure 28: Schéma du circuit électronique**
  
 <img src="Images/PCB/Empreinte OLED.png" width="651.090135pt" height="200.025785pt"/></p>
 <img src="Images/PCB/Empreinte Bluetooth.png" width="874.090135pt" height="200.025785pt"/></p>
 <img src="Images/PCB/Empreinte encodeur rotatoire.png" width="899.090135pt" height="200.025785pt"/></p>
 <img src="Images/PCB/Empreinte potentiomètre digital.png" width="477.090135pt" height="260.025785pt"/></p>
 
-**Figures 28: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
+**Figures 29: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
 
 <div align="left"></p>
 
@@ -358,7 +358,7 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 <div align="center">
 <img src="Images/PCB KiCAD pistes.png"/></p>
 
-**Figure 29: Schémas des pistes sur le PCB**
+**Figure 30: Schémas des pistes sur le PCB**
 
 <div align="left"></p>
 
@@ -376,7 +376,7 @@ Une fois l'insolation réalisée, la partie de la résine insolée est dissoute 
 <div align="center">
 <img src="Images/Masque PCB.png"/></p>
 
-**Figure 30: Masque imprimé du PCB sur un film transparent**
+**Figure 31: Masque imprimé du PCB sur un film transparent**
 
 <div align="left"></p>
 
@@ -399,7 +399,7 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 
 ![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
 
-**Figure 31: Dessin 2D du banc de test**
+**Figure 32: Dessin 2D du banc de test**
 
 <div align="left"></p>
 
@@ -408,7 +408,7 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 <div align="center">
 <img src="Images/Réalisation Banc de test.jpg" width="733.090135pt" height="550.025785pt"/></p>
 
-**Figure 32: Réalisation du banc de test au FabLab**
+**Figure 33: Réalisation du banc de test au FabLab**
 
 <div align="left"></p>
 
