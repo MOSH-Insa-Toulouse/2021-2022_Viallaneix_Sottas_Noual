@@ -52,16 +52,14 @@ Nous utiliserons pour cela la résistivité du graphite, qui est suffisamment fa
 
 **Figure 1: Première description schématique d'une mesure sur le capteur de graphite**
 
-<div align="left">
-</p>
+<div align="left"></p>
 
 > Dans l’exemple ci dessus, on mesurera pour une même tension appliquée que:
 
 <div align="center">
 <img src="Images/Calculs/Formule 0.png"/></p>
 
-<div align="left">
-</p>
+<div align="left"></p>
 
 > L’intérêt de ce capteur se situe dans son aspect low-tech qui lui permet d’être facilement produit, mais pas uniquement :  la vaste gamme de dureté des mines de crayon (H, F, HB, B) offre un large choix pour la résistivité du dépôt.
 En effet, la dureté d’une mine correspond à ses proportions de graphite et d’argile. Le graphite est, par exemple, plus présent dans un crayon dit « gras » de type B que dans un crayon de type H. Ainsi, nous disposons assez simplement d’un large panel de capteurs pour éventuellement les comparer à l’aide du banc de tests.
@@ -69,6 +67,26 @@ En effet, la dureté d’une mine correspond à ses proportions de graphite et d
 (#### Propriété d'un système granulaire)
 ### Acquisition des données
 #### La carte Arduino
+
+Dans notre projet, nous allons utiliser la carte Arduino UNO possédant le microcontrôleur ATMega328. 
+
+<div align="center">
+<img src="Images/Carte Arduino UNO.png"/></p>
+
+**Figure 2: Illustration de la carte Arduino UNO**
+
+<div align="left"></p>
+
+Elle dispose de 6 entrées analogiques et de 14 broches numériques d'entrées/sorties. 
+Pour pouvoir l'utiliser, on a juste à la connecter directement à l'ordinateur via le câble USB. 
+
+La carte Arduino UNO possède les caractéristiques suivantes: 
+
+* **Résolution**: 10 à 12 bits (1024 à 4096 points)
+* **Pleine échelle (VRef)**: de 1.1 V à 5.0 V
+* **Impédance de source max**: 1 kΩ à 10 kΩ
+* **Fréquence d'échantillonnage**: 15 kHz maximale
+
 #### Le conditionneur
 
 #### Partie 1: Mesure d'un très faible courant avec l'aide d'un micro-contrôleur
@@ -77,7 +95,7 @@ L’objectif étant d’extraire l’information utile du capteur ayant un très
 <p align="center"><img src="Images/solution classique transimpédance.png" align=middle width="456.690135pt" height="300.925785pt"/></p>
 <div align="center"></p>
   
-**Figure 2: Montage de transimpédance (ou convertisseur courant-tension)**
+**Figure 3: Montage de transimpédance (ou convertisseur courant-tension)**
   
 <div align="left"></p>
 
@@ -89,7 +107,7 @@ L’inconvénient d’un montage classique de transimpédance est qu’il néces
 
 <div align="center"></p>
   
-**Figures 3 et 4: Ajout d'un étage inverseur sur le montage de transimpédance et Calcul du gain du second montage**
+**Figures 4 et 5: Ajout d'un étage inverseur sur le montage de transimpédance et Calcul du gain du second montage**
 
 <div align="left"></p>
 
@@ -100,11 +118,11 @@ Pour plus de simplicité, on a choisi un montage en prenant un seul AOP dans le 
 
 <div align="center"></p> 
 
-**Figure 5: Solution simplifiée pour le montage transimpédance**
+**Figure 6: Solution simplifiée pour le montage transimpédance**
 
 <p align="center"><img src="Images/Calculs/Formule 3.png" align=middle width="494.690135pt" height="23.925785pt"/></p>
 
-**Figure 6: Calcul de la tension aux bornes de R1**
+**Figure 7: Calcul de la tension aux bornes de R1**
 
 <div align="left"></p>
   
@@ -118,7 +136,7 @@ Le Gain de ce montage et la Tension de sortie ADC sont décrits dans les calculs
 <p align="center"><img src="Images/Calculs/Formule 5.png" align=middle width="428.690135pt" height="23.925785pt"/></p>
 <div align="center"> </p>
   
-**Figure 7: Calculs du gain du montage et de la tension de sortie**
+**Figure 8: Calculs du gain du montage et de la tension de sortie**
 
 <div align="left"></p>
   
@@ -134,7 +152,7 @@ De plus, on peut remarquer que cet AOP possède un mode commun incluant la masse
 <div align="center"></p>
 <p align="center"><img src="Images/Simulation_LTSpice/Electrical characteristics LTC1050C.jpg"/></p>
   
-**Figure 8: Extrait de la datasheet dans la partie Electrical Characteristics**
+**Figure 9: Extrait de la datasheet dans la partie Electrical Characteristics**
 
 <div align="left"></p>
   
@@ -154,7 +172,7 @@ En intégrant les différents filtres, le montage ressemble à ceci :
 <div align="center"></p>
 <p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique 1.png" align=middle width="952.090135pt" height="446.025785pt"/></p>
   
-**Figure 9: Schéma du montage électrique avec les différents filtres**
+**Figure 10: Schéma du montage électrique avec les différents filtres**
 
 <div align="left"></p>
 
@@ -163,7 +181,7 @@ On distingue 3 différents filtres où nous avons cherché pour chacun la fréqu
 <div align="center"></p>
 <p align="center"><img src="Images/Simulation_LTSpice/Distinction des filtres.png" align=middle width="742.090135pt" height="483.025785pt"/></p>
   
-**Figure 10: Identification des différents filtres dans le montage**
+**Figure 11: Identification des différents filtres dans le montage**
 
 <div align="left"></p> 
  
@@ -172,7 +190,7 @@ Tout d'abord, le filtre passe-bas passif, placé à l'entrée de l'AOP, est cons
 <p align="center"><img src="Images/Calculs/Formule 6.png" align=middle width="533.090135pt" height="48.025785pt"/></p>
 <div align="center"></p> 
 
-**Figure 11: Calcul de la fréquence de coupure du filtre passif (R1 et C1)**
+**Figure 12: Calcul de la fréquence de coupure du filtre passif (R1 et C1)**
 
 <div align="left"></p>
 
@@ -181,7 +199,7 @@ Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP
 <p align="center"><img src="Images/Calculs/Formule 7.png" align=middle width="453.090135pt" height="48.025785pt"/></p>
 <div align="center"></p>
 
-**Figure 12: Calcul de la fréquence de coupure du filtre actif (R3 et C4)**
+**Figure 13: Calcul de la fréquence de coupure du filtre actif (R3 et C4)**
 
 <div align="left"></p>
 
@@ -190,7 +208,7 @@ Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué 
 <p align="center"><img src="Images/Calculs/Formule 8.png" align=middle width="524.090135pt" height="48.025785pt"/></p>
 <div align="center"></p> 
 
-**Figure 13: Calcul de la fréquence de coupure du filtre passif (R6 et C2) et Vérification de la condition d'échantillonnage de Shannon**
+**Figure 14: Calcul de la fréquence de coupure du filtre passif (R6 et C2) et Vérification de la condition d'échantillonnage de Shannon**
 
 <div align="left"></p>
 
@@ -202,7 +220,7 @@ Selon les calculs, on respecte bien la condition d'échantillonnage de Shannon `
 <div align="center"></p>
 <p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique 1.png" align=middle width="952.090135pt" height="446.025785pt"/></p>
 
-**Figure 14: Premier schéma du montage électronique**
+**Figure 15: Premier schéma du montage électronique**
 
 <div align="left"></p>
   
@@ -213,7 +231,7 @@ Dans ce schéma, nous simulons le bruit en courant à l'entrée en mettant une c
 <div align="center"></p>
 <p align="center"><img src="Images/Simulation_LTSpice/Schéma électrique optimisé.png" align=middle width="930 pt" height="420.025785pt"/></p>
 
-**Figure 15: Schéma électrique optimisé**
+**Figure 16: Schéma électrique optimisé**
 
 <div align="left"></p>
   
@@ -228,11 +246,11 @@ On vérifie les conditions optimales de fonctionnement du montage électronique 
 <div align="center"></p>
 <img src="Images/Simulation_LTSpice/Simulation 1 illustration du gain montage.png"/></p>
 
-**Figure 16: Vérification du gain d'amplification du signal environ égal 100**
+**Figure 17: Vérification du gain d'amplification du signal environ égal 100**
   
 <img src="Images/Simulation_LTSpice/Question 1_bis.jpg"/></p>
 
-**Figure 17: Vérification du la tension de sortie du montage avec un courant d'entrée égal à 100nA**
+**Figure 18: Vérification du la tension de sortie du montage avec un courant d'entrée égal à 100nA**
 
 <div align="left"></p>
   
@@ -245,7 +263,7 @@ Pour le premier filtre à l'entrée de l'AOP (R1 et C1):
 <div align="center">
 <img src="Images/Simulation_LTSpice/Simulation 3 filtre gauche.png"/></p>
 
-**Figure 18: Illustration graphique de la fréquence de coupure du filtre (R1 et C1)**
+**Figure 19: Illustration graphique de la fréquence de coupure du filtre (R1 et C1)**
 
 <div align="left"></p>
   
@@ -254,7 +272,7 @@ Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le der
 <div align="center">
 <img src="Images/Simulation_LTSpice/Simulation 5 filtres centre et droit.png"/></p>
 
-**Figure 19: Illustration graphique des fréquences de coupure des deux filtres passe-bas**
+**Figure 20: Illustration graphique des fréquences de coupure des deux filtres passe-bas**
 
 <div align="left"></p>
 
@@ -264,7 +282,7 @@ Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le der
 <div align="center">
 <img src="Images/Simulation_LTSpice/Question 3.jpg"/></p>
 
-**Figure 20: Illustration graphique de l'incidence du courant d'entrée sur la tension de sortie**
+**Figure 21: Illustration graphique de l'incidence du courant d'entrée sur la tension de sortie**
 
 <div align="left"></p>
   
@@ -278,20 +296,18 @@ On peut remarquer dans cette image qu'à partir d'une valeur de 500nA pour le co
 <img src="Images/Calculs/Atténuation 50 Hz.png"/> 
 <p align="center"><img src="Images/Calculs/Atténuation échantillonnage.png"/></p>
 
-**Figures 21 et 22: Illustration graphique de l'atténuation du signal d'un bruit en courant pour deux fréquences spécifiques et calculs des atténuations**
+**Figures 22 et 23: Illustration graphique de l'atténuation du signal d'un bruit en courant pour deux fréquences spécifiques et calculs des atténuations**
 
 <div align="left"></p>
 
 Comme on peut le voir avec les calculs précédents, on constate qu'il y a une atténuation en bruit de courant environ égale à 40dB pour une fréquence autour de 50Hz et elle est environ égale à 100 dB pour un bruit en courant au voisinage de la fréquence de repliement de spectre. Cela montre bien que le signal peut être fortement perturbé et atténué si on laisse la composante fréquentielle à 50 Hz et si on ne respecte la condition d'échantillonnage.   
 
 
-> (Simulation continue paramétrique (DC Sweep))
-
 ### Code Arduino du système
 <div align="center">
 <img src="https://github.com/MOSH-Insa-Toulouse/2021-2022_Viallaneix_Sottas_Noual/blob/39fd9ad23a14a9ccfff4c6776e45fc2be55771ee/Images/logigramme.jpg"/></p>
 
-**Figure 23: Logigramme de notre code Arduino**
+**Figure 24: Logigramme de notre code Arduino**
 
 <div align="left"></p>
   
@@ -304,7 +320,7 @@ L'application mobile associée au banc de test fonctionne avec un timer identiqu
 <div align="center"></p>
 <img src="APK/FaceAvantAPK.png"/></p>
 
-**Figure 24: Aperçu visuel de notre application**
+**Figure 25: Aperçu visuel de notre application**
 
 <div align="left"></p>
 
@@ -312,7 +328,7 @@ L'application mobile associée au banc de test fonctionne avec un timer identiqu
 <img src="APK/BlocsAPK1.png"/></p>
 <img src="APK/BlocsAPK2.png"/></p>
 
-**Figures 25 et 26: Extraits des blocs pour la réalisation de l'application Android sur *MIT App Inventor***
+**Figures 26 et 27: Extraits des blocs pour la réalisation de l'application Android sur *MIT App Inventor***
 
 <div align="left"></p>   
 
@@ -327,18 +343,18 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 <div align="center">
 <img src="Images/Schématique Carte Arduino.png"/></p>
  
-**Figure 27: Schéma des pins de connexion de la carte Arduino UNO**
+**Figure 28: Schéma des pins de connexion de la carte Arduino UNO**
 
 <img src="Images/PCB/Schématique du circuit électronique.png"/></p>
  
-**Figure 28: Schéma du circuit électronique**
+**Figure 29: Schéma du circuit électronique**
  
 <img src="Images/PCB/Empreinte OLED.png" width="651.090135pt" height="200.025785pt"/></p>
 <img src="Images/PCB/Empreinte Bluetooth.png" width="874.090135pt" height="200.025785pt"/></p>
 <img src="Images/PCB/Empreinte encodeur rotatoire.png" width="899.090135pt" height="200.025785pt"/></p>
 <img src="Images/PCB/Empreinte potentiomètre digital.png" width="477.090135pt" height="260.025785pt"/></p>
 
-**Figures 29: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
+**Figures 30: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
 
 <div align="left"></p>
 
@@ -358,7 +374,7 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 <div align="center">
 <img src="Images/PCB KiCAD pistes.png"/></p>
 
-**Figure 30: Schémas des pistes sur le PCB**
+**Figure 31: Schémas des pistes sur le PCB**
 
 <div align="left"></p>
 
@@ -376,7 +392,7 @@ Une fois l'insolation réalisée, la partie de la résine insolée est dissoute 
 <div align="center">
 <img src="Images/Masque PCB.png"/></p>
 
-**Figure 31: Masque imprimé du PCB sur un film transparent**
+**Figure 32: Masque imprimé du PCB sur un film transparent**
 
 <div align="left"></p>
 
@@ -399,7 +415,7 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 
 ![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
 
-**Figure 32: Dessin 2D du banc de test**
+**Figure 33: Dessin 2D du banc de test**
 
 <div align="left"></p>
 
@@ -408,7 +424,7 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 <div align="center">
 <img src="Images/Réalisation Banc de test.jpg" width="733.090135pt" height="550.025785pt"/></p>
 
-**Figure 33: Réalisation du banc de test au FabLab**
+**Figure 34: Réalisation du banc de test au FabLab**
 
 <div align="left"></p>
 
