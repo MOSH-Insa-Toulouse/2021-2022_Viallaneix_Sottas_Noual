@@ -205,10 +205,13 @@ Ensuite, le filtre passe-bas actif, placé entre l'entrée et la sortie de l'AOP
 
 Enfin, le filtre passe-bas passif, placé à la sortie de l'AOP, est constitué de R6(100kΩ) et C2(100nF). Il possède une fréquence de coupure théorique environ égale à 1.6kHz `cf Figure 9`. En sachant que la fréquence d'échantillonnage du micro-contrôleur est environ égale à 15,4kHz, il faut respecter la condition d'échantillonnage de Shannon à savoir:  
 
-<p align="center"><img src="Images/Calculs/Formule 8.png" align=middle width="524.090135pt" height="48.025785pt"/></p>
 <div align="center"></p> 
 
-**Figure 14: Calcul de la fréquence de coupure du filtre passif (R6 et C2) et Vérification de la condition d'échantillonnage de Shannon**
+<img src="Images/Calculs/Formule 8.png" align=middle width="524.090135pt" height="48.025785pt"/></p>
+<img src="Images/Condition de Shannon.png"/></p>
+<img src="Images/Calculs/Application Numérique Shannon.png"/></p>
+
+**Figures 14: Calcul de la fréquence de coupure du filtre passif (R6 et C2) et Vérification de la condition d'échantillonnage de Shannon**
 
 <div align="left"></p>
 
