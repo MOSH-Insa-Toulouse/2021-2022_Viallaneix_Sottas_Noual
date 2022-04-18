@@ -71,9 +71,10 @@ En effet, la dureté d’une mine correspond à ses proportions de graphite et d
 Dans notre projet, nous allons utiliser la carte Arduino UNO possédant le microcontrôleur ATMega328. 
 
 <div align="center">
-<img src="Images/Carte Arduino UNO.png"/></p>
+<img src="Images/Carte Arduino UNO.png" width="357.090135pt" height="300.05785pt"/></p>
+<img src="Images/Brochage carte Arduino.png"width="265.090135pt" height="350.025785pt"/></p>
 
-**Figure 2: Illustration de la carte Arduino UNO**
+**Figure 2: Illustration de la carte Arduino UNO et Brochage de la carte Arduino**
 
 <div align="left"></p>
 
@@ -342,8 +343,8 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 
 <div align="center">
 <img src="Images/Schématique Carte Arduino.png"/></p>
- 
-**Figure 28: Schéma des pins de connexion de la carte Arduino UNO**
+
+**Figure 28: Schéma des pins de connexion de la carte Arduino UNO **
 
 <img src="Images/PCB/Schématique du circuit électronique.png"/></p>
  
