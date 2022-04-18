@@ -444,5 +444,14 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 
 <div align="left"></p>
 
+Nous avons ensuite effectué les premiers tests sur notre banc de tests avec notre capteur: 
+
+<div align="center">
+<img src="Images/Banc de test.jpg" width="600.090135pt" height="337.5025785pt"/><img src="Images/Banc de test_1.jpg" width="600.090135pt" height="337.525785pt"/></p>
+
+**Figure 35: Premiers tests avec notre banc de tests**
+
+<div align="left"></p>
+
 ### Measurement System Analysis
 
