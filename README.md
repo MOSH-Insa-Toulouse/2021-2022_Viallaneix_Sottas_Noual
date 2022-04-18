@@ -257,8 +257,14 @@ On vérifie les conditions optimales de fonctionnement du montage électronique 
 
 <div align="left"></p>
   
-Pour l'illustration graphique du gain du montage général, on distingue qu'il y a bien 3 filtres dans le circuit électronique grâce aux différentes variations du terme de phase (courbe en traits en pointillés `cf Figure `).
-> Mettre photo 
+Pour l'illustration graphique du gain du montage général, on distingue qu'il y a bien 3 filtres dans le circuit électronique grâce aux différentes variations du terme de phase (courbe en traits en pointillés `cf Figure ci-dessous`).
+
+<div align="center"></p>
+<img src="Images/Simulation_LTSpice/Simulation 2 fréquence coupure filtre centre.png"/></p>
+
+**Figure 19: Identification graphique des 3 filtres**
+
+<div align="left"></p>
 
 > On vérifie graphiquement la fréquence de coupure de chaque filtre en effectuant une simulation fréquentielle (AC Sweep):
 
@@ -266,7 +272,7 @@ Pour le premier filtre à l'entrée de l'AOP (R1 et C1):
 <div align="center">
 <img src="Images/Simulation_LTSpice/Simulation 3 filtre gauche.png"/></p>
 
-**Figure 19: Illustration graphique de la fréquence de coupure du filtre (R1 et C1)**
+**Figure 20: Illustration graphique de la fréquence de coupure du filtre (R1 et C1)**
 
 <div align="left"></p>
   
@@ -275,7 +281,7 @@ Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le der
 <div align="center">
 <img src="Images/Simulation_LTSpice/Simulation 5 filtres centre et droit.png"/></p>
 
-**Figure 20: Illustration graphique des fréquences de coupure des deux filtres passe-bas**
+**Figure 21: Illustration graphique des fréquences de coupure des deux filtres passe-bas**
 
 <div align="left"></p>
 
@@ -285,7 +291,7 @@ Pour le second filtre entre l'entrée et la sortie de l'AOP (R3 et C4) et le der
 <div align="center">
 <img src="Images/Simulation_LTSpice/Question 3.jpg"/></p>
 
-**Figure 21: Illustration graphique de l'incidence du courant d'entrée sur la tension de sortie**
+**Figure 22: Illustration graphique de l'incidence du courant d'entrée sur la tension de sortie**
 
 <div align="left"></p>
   
@@ -299,7 +305,7 @@ On peut remarquer dans cette image qu'à partir d'une valeur de 500nA pour le co
 <img src="Images/Calculs/Atténuation 50 Hz.png"/> 
 <p align="center"><img src="Images/Calculs/Atténuation échantillonnage.png"/></p>
 
-**Figures 22 et 23: Illustration graphique de l'atténuation du signal d'un bruit en courant pour deux fréquences spécifiques et calculs des atténuations**
+**Figures 23 et 24: Illustration graphique de l'atténuation du signal d'un bruit en courant pour deux fréquences spécifiques et calculs des atténuations**
 
 <div align="left"></p>
 
@@ -310,7 +316,7 @@ Comme on peut le voir avec les calculs précédents, on constate qu'il y a une a
 <div align="center">
 <img src="https://github.com/MOSH-Insa-Toulouse/2021-2022_Viallaneix_Sottas_Noual/blob/39fd9ad23a14a9ccfff4c6776e45fc2be55771ee/Images/logigramme.jpg"/></p>
 
-**Figure 24: Logigramme de notre code Arduino**
+**Figure 25: Logigramme de notre code Arduino**
 
 <div align="left"></p>
   
@@ -323,7 +329,7 @@ L'application mobile associée au banc de test fonctionne avec un timer identiqu
 <div align="center"></p>
 <img src="APK/FaceAvantAPK.png"/></p>
 
-**Figure 25: Aperçu visuel de notre application**
+**Figure 26: Aperçu visuel de notre application**
 
 <div align="left"></p>
 
@@ -331,7 +337,7 @@ L'application mobile associée au banc de test fonctionne avec un timer identiqu
 <img src="APK/BlocsAPK1.png"/></p>
 <img src="APK/BlocsAPK2.png"/></p>
 
-**Figures 26 et 27: Extraits des blocs pour la réalisation de l'application Android sur *MIT App Inventor***
+**Figures 27 et 28: Extraits des blocs pour la réalisation de l'application Android sur *MIT App Inventor***
 
 <div align="left"></p>   
 
@@ -346,18 +352,18 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 <div align="center">
 <img src="Images/Schématique Carte Arduino.png"/></p>
 
-**Figure 28: Schéma des pins de connexion de la carte Arduino UNO **
+**Figure 29: Schéma des pins de connexion de la carte Arduino UNO **
 
 <img src="Images/PCB/Schématique du circuit électronique.png"/></p>
  
-**Figure 29: Schéma du circuit électronique**
+**Figure 30: Schéma du circuit électronique**
  
 <img src="Images/PCB/Empreinte OLED.png" width="651.090135pt" height="200.025785pt"/></p>
 <img src="Images/PCB/Empreinte Bluetooth.png" width="874.090135pt" height="200.025785pt"/></p>
 <img src="Images/PCB/Empreinte encodeur rotatoire.png" width="899.090135pt" height="200.025785pt"/></p>
 <img src="Images/PCB/Empreinte potentiomètre digital.png" width="477.090135pt" height="260.025785pt"/></p>
 
-**Figures 30: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
+**Figures 31: Schémas et empreintes de chacun de nos composants électroniques (Écran OLED, BLuetooth, Encodeur rotatoire, Potentiomètre digital)**
 
 <div align="left"></p>
 
@@ -377,7 +383,7 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 <div align="center">
 <img src="Images/PCB KiCAD pistes.png"/></p>
 
-**Figure 31: Schémas des pistes sur le PCB**
+**Figure 32: Schémas des pistes sur le PCB**
 
 <div align="left"></p>
 
@@ -395,7 +401,7 @@ Une fois l'insolation réalisée, la partie de la résine insolée est dissoute 
 <div align="center">
 <img src="Images/Masque PCB.png"/></p>
 
-**Figure 32: Masque imprimé du PCB sur un film transparent**
+**Figure 33: Masque imprimé du PCB sur un film transparent**
 
 <div align="left"></p>
 
@@ -413,12 +419,19 @@ Uns fois le PCB réalisé, nous avons percé tous les trous des pins associés �
 L’utilisateur détermine au préalable le nombre de répétitions souhaité à l’aide de l’encodeur rotatoire placé sur le PCB. Il peut ensuite récupérer les données (angle, itération de la mesure, résistance lue) sur le moniteur série et les traiter dans un logiciel comme Rmarkdown, Python via l'interpréteur Spyder IDE ou Qtiplot.
 Le capteur qui servira de référence comparative sera le Flex Sensor fourni dans le kit Arduino, qui possède déjà une datasheet.
 
-> Nous avons élaboré un premier modèle en 2D de notre banc de tests: 
+> Nous avons élaboré un premier modèle en 2D ainsi qu'un modèle 3D de notre banc de tests: 
 <div align="center"></p>
 
 ![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
 
-**Figure 33: Dessin 2D du banc de test**
+**Figure 34: Dessin 2D du banc de test**
+
+<div align="left"></p>
+<div align="center"></p>
+
+<img src="Images/Masque PCB.png"/></p>
+
+**Figure 34: Dessin 3D du banc de test sur *FreeCAD***
 
 <div align="left"></p>
 
@@ -427,15 +440,9 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 <div align="center">
 <img src="Images/Réalisation Banc de test.jpg" width="733.090135pt" height="550.025785pt"/></p>
 
-**Figure 34: Réalisation du banc de test au FabLab**
+**Figure 35: Réalisation du banc de test au FabLab**
 
 <div align="left"></p>
 
-
 ### Measurement System Analysis
-
-
-
-
-
 
