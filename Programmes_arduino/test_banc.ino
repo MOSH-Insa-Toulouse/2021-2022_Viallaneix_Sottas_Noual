@@ -126,7 +126,7 @@ void loop() {
   ////////////////////  INITIALISATION MENU
   clic=1;
   encoder0Pos = 0;
-  delay(500);
+  delay(50);
 
 
   ////////////////////  MESURE DE LA TENSION ET ADAPTATION POTENTIOMETRE R2
@@ -270,7 +270,13 @@ void setPotWiper(int addr, int pos)
 ////////////////////  ENCODEUR ROTATOIRE POUR LE CLIC
 void doSwitch()
 {
+  static unsigned long tempsprecedent = 0;
+  unsigned long temps = millis();
+  if (temps - tempsprecedent > 100) 
+  {
     clic = 0;
+  }
+  tempsprecedent=temps;
 }
 
 
