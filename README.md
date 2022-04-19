@@ -38,6 +38,7 @@ Granulometric sensor
    * [Partie 3: Soudure des composants sur le PCB et premiers tests](#partie-3-soudure-des-composants-sur-le-pcb-et-premiers-tests)
 * [Banc de tests](#banc-de-tests)
 * [Measurement System Analysis](#measurement-system-analysis)
+* [Crédits](#auteurs)
 
 ***
 
@@ -387,7 +388,12 @@ Après avoir réalisé les simulations sur *LTSpice*, nous avons conçu un premi
 
 <div align="left"></p>
 
-> Mettre une photo 3D
+<div align="center">
+<img src="Images/Aperçu 3D.png"/></p>
+
+**Figure 33: Schéma 3D des pistes sur le PCB**
+
+<div align="left"></p>
   
 Avec l'aide de Mme Catherine Crouzet, nous avons réalisé le PCB selon le protocole suivant:
 
@@ -401,7 +407,7 @@ Une fois l'insolation réalisée, la partie de la résine insolée est dissoute 
 <div align="center">
 <img src="Images/Masque PCB.png"/></p>
 
-**Figure 33: Masque imprimé du PCB sur un film transparent**
+**Figure 34: Masque imprimé du PCB sur un film transparent**
 
 <div align="left"></p>
 
@@ -424,14 +430,14 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 
 ![Dessin 2D du banc de tests](Images/Dessin_bancTest.jpg "Dessin 2D montage banc de test")
 
-**Figure 34: Dessin 2D du banc de test**
+**Figure 35: Dessin 2D du banc de test**
 
 <div align="left"></p>
 <div align="center"></p>
 
 <img src="Images/Masque PCB.png"/></p>
 
-**Figure 34: Dessin 3D du banc de test sur *FreeCAD***
+**Figure 36: Dessin 3D du banc de test sur *FreeCAD***
 
 <div align="left"></p>
 
@@ -440,7 +446,7 @@ Le capteur qui servira de référence comparative sera le Flex Sensor fourni dan
 <div align="center">
 <img src="Images/Réalisation Banc de test.jpg" width="733.090135pt" height="550.025785pt"/></p>
 
-**Figure 35: Réalisation du banc de test au FabLab**
+**Figure 37: Réalisation du banc de test au FabLab**
 
 <div align="left"></p>
 
@@ -449,9 +455,13 @@ Nous avons ensuite effectué les premiers tests sur notre banc de tests avec not
 <div align="center">
 <img src="Images/Banc de test.jpg" width="600.090135pt" height="337.5025785pt"/><img src="Images/Banc de test_1.jpg" width="600.090135pt" height="337.525785pt"/></p>
 
-**Figure 35: Premiers tests avec notre banc de tests**
+**Figure 38: Premiers tests avec notre banc de tests**
 
 <div align="left"></p>
 
 ### Measurement System Analysis
+
+### Auteurs
+
+Arona SOTTAS, Léo VIALLANEIX et Raphaël NOUAL
 
