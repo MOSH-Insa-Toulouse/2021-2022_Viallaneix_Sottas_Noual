@@ -417,7 +417,6 @@ Uns fois le PCB réalisé, nous avons percé tous les trous des pins associés �
 
 
 ### Banc de tests
-> En Cours de réalisation, mettre 1-2 images sur le banc de tests fonctionnels
 
 > Le but de ce banc de test est de déterminer la sensibilité du capteur, de voir l’évolution de cette dernière selon la répétition des flexions et de comparer ces données avec un capteur commercialisé "Flex-Sensor".
 
